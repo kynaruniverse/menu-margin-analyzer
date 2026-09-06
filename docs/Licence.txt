@@ -1,10 +1,14 @@
 MENU MARGIN ANALYZER — LICENCE AGREEMENT
 ==========================================
 
-Version 1.0
+Version 2.0
 
 This software ("Menu Margin Analyzer") is a digital product licensed,
-not sold, to you ("the Licensee") for use under the terms below.
+not sold, to you ("the Licensee") for use under the terms below. This
+licence covers the complete downloaded package: the application
+(index.html), its documentation (Start Here, Quick Start Guide, User
+Guide, Changelog, this Licence) and the sample data file
+(Sample Menu.csv).
 
 1. GRANT OF LICENCE
 
@@ -22,19 +26,47 @@ You may:
 - Print or export reports it generates for your own internal or
   client-facing use.
 
-2. RESTRICTIONS
+2. MODIFICATION
+
+You may:
+
+- Edit your own local copy of index.html for your own use — for
+  example, to change colours, add your own branding, or adjust
+  wording — provided the edited copy is used only under the terms of
+  this licence and is not distributed to anyone else, with or
+  without your changes.
+
+You may not:
+
+- Distribute, sell, or share a modified copy with any third party,
+  including clients, even where you performed the underlying
+  analysis for them.
+- Represent a modified copy as an official or unaltered release of
+  this software.
+
+Support is provided for the software as originally distributed;
+modifying your copy may affect your ability to receive support for
+it.
+
+3. RESTRICTIONS
 
 You may not:
 
 - Resell, sublicense, rent, lease, or otherwise redistribute this
-  software or its source files (index.html, style.css, app.js) as a
-  standalone product or as part of any other product or bundle.
+  software package (in original or modified form), including
+  index.html, its documentation, or Sample Menu.csv, whether as a
+  standalone product, bundled with any other product, or given away
+  free of charge.
+- Install or run this software on a device owned or controlled by a
+  client, or otherwise give a client their own working copy — client
+  work must be performed on your own licensed copy, with reports or
+  exports shared as the deliverable.
 - Remove or alter any copyright, licence, or attribution notices.
 - Claim authorship of the software.
-- Use this software to build a competing product for commercial
-  distribution.
+- Use this software, or any part of it, to build a competing product
+  for commercial distribution.
 
-3. NO WARRANTY
+4. NO WARRANTY
 
 This software is provided "as is," without warranty of any kind,
 express or implied. The figures, categories, and "potential
@@ -43,18 +75,18 @@ on the numbers you enter, not guarantees of actual results. You are
 responsible for verifying all outputs before making business
 decisions based on them.
 
-4. LIMITATION OF LIABILITY
+5. LIMITATION OF LIABILITY
 
 In no event shall the author be liable for any claim, damages, or
 other liability arising from the use of this software.
 
-5. DATA
+6. DATA
 
 This software stores all data locally in your browser. No data is
 transmitted to the author or any third party. You are responsible for
 backing up your own data (via CSV export) as you see fit.
 
-6. TERMINATION
+7. TERMINATION
 
 This licence remains in effect until terminated. It terminates
 automatically if you fail to comply with any of its terms.

@@ -1,15 +1,31 @@
 MENU MARGIN ANALYZER — CHANGELOG
 
+Current version: 2.0
+
 v2.0
 - Full visual and structural redesign to the new Visual Design System (warm/editorial "Profit Desk" concept).
-- New navigation: Overview, Menu, Insights, Scenarios.
-- New Overview screen: biggest opportunity, KPI strip, menu health bar, ranked priorities.
-- New Insights screen: interpreted, ranked cards per dish (Strong / Grow / Optimise / Review).
-- New dish detail view: full numbers, plain-language interpretation, suggested actions, relative performance vs. menu average.
-- Redesigned Scenarios: test a price, cost, or sales change per dish with modelled monthly/annual impact.
-- Redesigned Profit Map: dishes plotted by popularity vs. margin relative to menu average.
+- New navigation: Overview, Menu, Insights, Scenarios, Action plan, Profit control.
+- New Overview screen: biggest single opportunity, KPI strip (revenue, gross profit, food cost, dishes analysed), Strong / Grow / Optimise / Review / Loss menu health bar, and a ranked "what deserves attention" priority list.
+- New Insights screen: interpreted, ranked cards per dish (Loss / Optimise / Grow / Review / Strong), each with a plain-language read and, where relevant, a modelled monthly Potential improvement figure with a confidence read.
+- New Price-change candidates table (Insights): surfaces proven-demand dishes priced below what their food cost supports, with a suggested new price and modelled monthly upside.
+- New Margin target tool (Insights): set a target gross margin % (or use the menu average) and see every dish falling short, with its monthly shortfall in £.
+- New Action plan screen: turns every flagged dish into one concrete, checkable step, ranked in priority order, with a modelled £/month impact per item.
+- New dish detail view: full numbers, plain-language interpretation, suggested actions, and relative performance vs. menu average.
+- Redesigned Scenarios: test a price, ingredient cost, or sales-volume change per dish — independently or together — with modelled monthly impact per field, a combined current-vs-proposed comparison, a recommendation, and a ranking of which change matters most.
+- New recipe builder: build a dish's ingredient cost from itemised recipe lines (name, quantity, unit, cost per unit) instead of a single figure.
+- New Ingredient library: save an ingredient's unit and cost once, reuse it across recipes by name, and cascade a cost update to every recipe line that uses it.
+- New Menu versions: save a snapshot of the current menu (up to 20 kept), restore or delete any saved version.
+- New Compare versions: side-by-side headline figures and a dish-by-dish breakdown of what changed between any two versions (or a version and the current menu).
+- New Historical profitability: revenue, gross profit, food cost and margin across every saved version over time.
+- New Purchasing analysis: compares today's ingredient costs against a saved version per dish, flags category changes caused by cost movement, and shows the monthly impact.
+- New Profit control screen: overheads and labour tracked against gross profit and waste to produce net profit, break-even revenue, labour cost %, sales per labour hour, and prime cost %.
+- Redesigned Profit Map: dishes plotted by relative sales vs. relative margin against the menu average, colour-coded by category.
+- New Sales mix analysis: share of total gross profit from top-selling dishes, and whether popularity and margin move together.
 - Mobile: dedicated bottom navigation and card-based layouts, not a shrunk desktop view.
-- CSV import/export and the printable report carried over and re-verified.
+- CSV import validation with a preview and row-level error reporting; imports capped at 500 dishes per file.
+- Richer CSV export: now includes calculated gross margin, food cost % and category alongside the raw inputs.
+- New Export action list: a short CSV of just the dishes currently flagged in the Action plan, for sharing outside the app.
+- Printable report brought into line with the new screens and terminology, including menu health, biggest opportunity, sales mix, profit-control figures (where entered), historical profitability, and top Action plan priorities.
 
 v1.0
 - Initial release: Menu, Summary, Profit Map and Opportunities screens.
