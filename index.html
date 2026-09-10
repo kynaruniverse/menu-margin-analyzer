@@ -3,7 +3,7 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu Margin Analyzer</title>
+<title>Menu Margin Analyzer v2.0</title>
 <style>
   /* ==========================================================
      TOKENS
@@ -1162,14 +1162,14 @@
           <p>A quick view of performance, profitability and where attention may be worthwhile.</p>
           <div style="display:flex; align-items:center; gap:var(--space-2); flex-wrap:wrap; margin-top:var(--space-4);">
             <label for="targetFoodCostInput" style="font-size:13px; color:var(--text-secondary);">Target food cost %</label>
-            <input type="number" id="targetFoodCostInput" inputmode="decimal" step="0.5" min="0.5" max="100" placeholder="menu average" style="width:90px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="number" id="targetFoodCostInput" aria-label="Target food cost percentage" inputmode="decimal" step="0.5" min="0.5" max="100" placeholder="menu average" style="width:90px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
             <button class="btn btn-tertiary btn-sm" id="targetFoodCostResetBtn" style="display:none;">Use menu average</button>
           </div>
           <div style="display:flex; align-items:center; gap:var(--space-2); flex-wrap:wrap; margin-top:var(--space-3);">
             <label for="restaurantNameInput" style="font-size:13px; color:var(--text-secondary);">Restaurant name</label>
-            <input type="text" id="restaurantNameInput" autocapitalize="words" enterkeyhint="next" placeholder="Optional \u2014 shown on reports" style="width:200px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="text" id="restaurantNameInput" aria-label="Restaurant name" autocapitalize="words" enterkeyhint="next" placeholder="Optional \u2014 shown on reports" style="width:200px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
             <label for="reportingPeriodInput" style="font-size:13px; color:var(--text-secondary);">Reporting period</label>
-            <input type="text" id="reportingPeriodInput" placeholder="e.g. Q3 2026" style="width:140px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="text" id="reportingPeriodInput" aria-label="Reporting period" placeholder="e.g. Q3 2026" style="width:140px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
           </div>
         </div>
 
@@ -1216,7 +1216,7 @@
             <span id="bulkEditCount"></span>
             <label style="display:flex; align-items:center; gap:6px;">
               Adjust selling price by
-              <input type="number" id="bulkPricePercent" inputmode="decimal" step="0.5" placeholder="e.g. 5 or -10" style="width:80px;">%
+              <input type="number" id="bulkPricePercent" aria-label="Selling price adjustment percentage" inputmode="decimal" step="0.5" placeholder="e.g. 5 or -10" style="width:80px;">%
             </label>
             <button class="btn btn-secondary" id="bulkApplyBtn">Apply</button>
             <button class="btn btn-danger" id="bulkDeleteBtn">Delete selected</button>
@@ -1266,7 +1266,7 @@
                   <h3>Purchasing analysis</h3>
                   <p>How your ingredient costs have moved since a saved version.</p>
                 </div>
-                <select id="purchasingSinceSelect" style="padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);"></select>
+                <select id="purchasingSinceSelect" aria-label="Purchasing analysis starting version" style="padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);"></select>
               </div>
               <div id="purchasingMount"></div>
             </div>
@@ -1298,9 +1298,9 @@
               <div style="margin-top:var(--space-5); padding-top:var(--space-5); border-top:1px solid var(--divider);">
                 <h3 style="margin-bottom:var(--space-3);">Compare versions</h3>
                 <div style="display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-4);">
-                  <select id="compareFromSelect" style="padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);"></select>
+                  <select id="compareFromSelect" aria-label="Compare from version" style="padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);"></select>
                   <span style="color:var(--text-muted); font-size:13px;">vs</span>
-                  <select id="compareToSelect" style="padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);"></select>
+                  <select id="compareToSelect" aria-label="Compare to version" style="padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);"></select>
                   <button class="btn btn-secondary btn-sm" id="compareBtn">Compare</button>
                 </div>
                 <div id="compareResults"></div>
@@ -1342,7 +1342,7 @@
         <div id="scenariosContent" style="display:none;">
           <div class="scenario-picker">
             <label for="scenarioDishSelect" class="eyebrow" style="display:block; margin-bottom: var(--space-2);">Dish</label>
-            <select id="scenarioDishSelect"></select>
+            <select id="scenarioDishSelect" aria-label="Scenario dish"></select>
           </div>
           <div id="scenarioBody"></div>
         </div>
@@ -1401,6 +1401,17 @@
           <circle cx="12" cy="12" r="3.2"/>
         </svg>
         Insights
+      </button></li>
+      <li><button class="bottom-nav-item" data-nav="scenarios">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="4" x2="5" y2="20"/>
+          <circle cx="5" cy="9" r="2"/>
+          <line x1="12" y1="4" x2="12" y2="20"/>
+          <circle cx="12" cy="15" r="2"/>
+          <line x1="19" y1="4" x2="19" y2="20"/>
+          <circle cx="19" cy="7" r="2"/>
+        </svg>
+        Scenarios
       </button></li>
       <li><button class="bottom-nav-item" data-nav="plan">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -1542,6 +1553,61 @@
 
   const MAX_UNITS = 1000000;
 
+  // Every other manually-entered numeric field (dish price/cost/units, above) is
+  // bounded by a MAX_* constant enforced both in the input's max attribute and in
+  // the handler's validation. Overhead amount had neither, so an extreme value
+  // (mistyped extra zero, pasted garbage) could flow unbounded into totalOverheads,
+  // totalFixedCosts, netProfit and breakEvenRevenue.
+  const MAX_OVERHEAD = 10000000;
+
+  // Labour cost/hours had no upper bound, unlike every other manually-entered
+  // numeric field, so an extreme value could flow unbounded into labourCostPercent,
+  // primeCostPercent and break-even calculations.
+  const MAX_LABOUR_COST = 10000000;
+
+  const MAX_LABOUR_HOURS = 100000;
+
+  // Single source of truth for the CSV import row cap — referenced by importCsvFile
+  // (where the cap is applied), openImportPreview and confirmImport (where it's
+  // mentioned in user-facing text) — so the three can never drift out of sync.
+  const CSV_IMPORT_MAX_ROWS = 500;
+
+  // Canonical bounds for every dish numeric field. This is the single source of
+  // truth for validation limits — manual entry, CSV import, and data loaded from
+  // storage/snapshots all call dishFieldError()/clampDishField() below instead of
+  // repeating their own min/max checks, so the rules can never drift apart.
+  const DISH_FIELD_RULES = {
+    sellingPrice: { min: 0, max: MAX_PRICE, integer: false, label: "Selling price", fmt: v => fmtCurrency(v) },
+    ingredientCost: { min: 0, max: MAX_COST, integer: false, label: "Ingredient cost", fmt: v => fmtCurrency(v) },
+    unitsSold: { min: 0, max: MAX_UNITS, integer: true, label: "Units sold", fmt: v => v.toLocaleString() },
+    wasteUnits: { min: 0, max: MAX_UNITS, integer: true, label: "Units wasted", fmt: v => v.toLocaleString() }
+  };
+
+  // Strict check used wherever an invalid value must block the save (manual entry
+  // form, CSV import row rejection). Returns an error string, or null if valid.
+  function dishFieldError(field, value) {
+    const rule = DISH_FIELD_RULES[field];
+    if (value === null || value === undefined || !Number.isFinite(value)) return `${rule.label} must be a number.`;
+    if (value < rule.min) return `${rule.label} must be zero or greater.`;
+    if (rule.integer && !Number.isInteger(value)) return `${rule.label} must be a whole number.`;
+    if (value > rule.max) return `${rule.label} must be ${rule.fmt(rule.max)} or less.`;
+    return null;
+  }
+
+  // Lenient version used wherever a bad value must never block loading (localStorage,
+  // snapshots, restores) — out-of-range or malformed data is clamped/coerced into the
+  // same bounds dishFieldError() enforces, instead of being silently accepted as-is.
+  function clampDishField(field, value) {
+    const rule = DISH_FIELD_RULES[field];
+    let v = Number.isFinite(value) ? value : 0;
+    // Floor (not round) for whole-unit fields, matching calcDish's own Math.floor(unitsSold) — a fractional artifact from corrupted storage should resolve the same way everywhere, never rounding a partial unit up into a whole one that was never actually recorded.
+    
+    if (rule.integer) v = Math.floor(v);
+    if (v < rule.min) v = rule.min;
+    if (v > rule.max) v = rule.max;
+    return v;
+  }
+
   function parseScenarioInput(rawValue) {
     return rawValue.trim() === "" ? NaN : Number(rawValue);
   }
@@ -1628,8 +1694,27 @@
     try {
       const raw = localStorage.getItem(OVERHEADS_KEY);
       const parsed = raw ? JSON.parse(raw) : [];
-      overheads = Array.isArray(parsed) ? parsed.filter(o => o && typeof o.name === "string" && Number.isFinite(o.monthlyAmount)) : [];
-      nextOverheadId = overheads.length ? Math.max(...overheads.map(o => o.id || 0)) + 1 : 1;
+      const seenIds = new Set();
+      const seenNames = new Set();
+      let fallbackId = 1;
+      overheads = Array.isArray(parsed) ? parsed
+        .filter(o => o && typeof o.name === "string" && o.name.trim())
+        .map(o => {
+          let id = Number.isFinite(o.id) && o.id > 0 ? Math.floor(o.id) : null;
+          if (id === null || seenIds.has(id)) {
+            while (seenIds.has(fallbackId)) fallbackId++;
+            id = fallbackId;
+          }
+          seenIds.add(id);
+          return { id, name: o.name.trim().slice(0, 120), monthlyAmount: Math.min(MAX_OVERHEAD, Math.max(0, Number.isFinite(o.monthlyAmount) ? o.monthlyAmount : 0)) };
+        })
+        .filter(o => {
+          const key = o.name.toLowerCase();
+          if (seenNames.has(key)) return false;
+          seenNames.add(key);
+          return true;
+        }) : [];
+      nextOverheadId = overheads.length ? Math.max(...overheads.map(o => o.id), 0) + 1 : 1;
     } catch (e) { overheads = []; nextOverheadId = 1; }
   }
 
@@ -1639,14 +1724,47 @@
   }
 
   let ingredientLibrary = []; // {id, name, unit, costPerUnit} — reusable across recipes, local only
-
+  // Lowercased-name -> entry index, rebuilt in renderIngredientLibraryList() any time
+  // ingredientLibrary changes. The recipe-editor name field looks an entry up on
+  // every keystroke — with a large library, a linear .find() re-scanning and
+  // re-lowercasing every entry per character typed was the actual bottleneck.
+  let ingredientLibraryIndex = new Map();
+  
   let nextIngredientId = 1;
 
   function loadIngredientLibrary() {
     try {
       const raw = localStorage.getItem(INGREDIENT_LIBRARY_KEY);
       const parsed = raw ? JSON.parse(raw) : [];
-      ingredientLibrary = Array.isArray(parsed) ? parsed.filter(i => i && typeof i.name === "string") : [];
+      // Malformed, negative, or oversized persisted costs must never reach fmtCurrency()
+      // or a recipe calculation unclamped — corrected to the same bounds enforced on entry.
+      const seenIds = new Set();
+      const seenNames = new Set();
+      let fallbackId = 1;
+      ingredientLibrary = Array.isArray(parsed)
+        ? parsed
+            .filter(i => i && typeof i.name === "string" && i.name.trim())
+            .map(i => {
+              let id = Number.isFinite(i.id) && i.id > 0 ? Math.floor(i.id) : null;
+              if (id === null || seenIds.has(id)) {
+                while (seenIds.has(fallbackId)) fallbackId++;
+                id = fallbackId;
+              }
+              seenIds.add(id);
+              return {
+                id,
+                name: i.name.trim().slice(0, 120),
+                unit: typeof i.unit === "string" ? i.unit.trim().slice(0, 40) : "",
+                costPerUnit: clampDishField("ingredientCost", i.costPerUnit)
+              };
+            })
+            .filter(i => {
+              const key = i.name.toLowerCase();
+              if (seenNames.has(key)) return false;
+              seenNames.add(key);
+              return true;
+            })
+        : [];
       nextIngredientId = ingredientLibrary.length ? Math.max(...ingredientLibrary.map(i => i.id || 0)) + 1 : 1;
     } catch (e) { ingredientLibrary = []; nextIngredientId = 1; }
   }
@@ -1664,8 +1782,8 @@
     try {
       const raw = localStorage.getItem(LABOUR_KEY);
       const parsed = raw ? JSON.parse(raw) : null;
-      labourCost = parsed && Number.isFinite(parsed.cost) ? parsed.cost : null;
-      labourHours = parsed && Number.isFinite(parsed.hours) ? parsed.hours : null;
+      labourCost = parsed && Number.isFinite(parsed.cost) && parsed.cost >= 0 && parsed.cost <= MAX_LABOUR_COST ? parsed.cost : null;
+      labourHours = parsed && Number.isFinite(parsed.hours) && parsed.hours >= 0 && parsed.hours <= MAX_LABOUR_HOURS ? parsed.hours : null;
     } catch (e) { labourCost = null; labourHours = null; }
   }
 
@@ -1681,8 +1799,8 @@
       const raw = localStorage.getItem(RESTAURANT_PROFILE_KEY);
       const parsed = raw ? JSON.parse(raw) : null;
       restaurantProfile = {
-        name: parsed && typeof parsed.name === "string" ? parsed.name : "",
-        period: parsed && typeof parsed.period === "string" ? parsed.period : ""
+        name: parsed && typeof parsed.name === "string" ? parsed.name.trim().slice(0, 120) : "",
+        period: parsed && typeof parsed.period === "string" ? parsed.period.trim().slice(0, 80) : ""
       };
     } catch (e) { restaurantProfile = { name: "", period: "" }; }
   }
@@ -1697,7 +1815,8 @@
   function loadActionPlanDone() {
     try {
       const raw = localStorage.getItem(ACTION_PLAN_DONE_KEY);
-      actionPlanDone = raw ? new Set(JSON.parse(raw)) : new Set();
+      const parsed = raw ? JSON.parse(raw) : [];
+      actionPlanDone = new Set(Array.isArray(parsed) ? parsed.filter(v => typeof v === "string" && v.length <= 120) : []);
     } catch (e) { actionPlanDone = new Set(); }
   }
 
@@ -1836,23 +1955,54 @@
         id = fallbackId;
       }
       seenIds.add(id);
-      const name = typeof item.name === "string" && item.name.trim() ? item.name : "Untitled dish";
+      const name = typeof item.name === "string" && item.name.trim() ? item.name.trim() : "Untitled dish";
+      // Recipe lines are sanitised once, up front, so both the recomputed ingredient
+      // cost and the stored recipe use the exact same corrected data — a line with no
+      // usable name is dropped (it can't be meaningfully corrected); quantity and cost
+      // per unit are coerced to finite, non-negative numbers rather than trusted as-is.
+      const sanitizedRecipe = Array.isArray(item.recipe)
+        // A zero (or invalid) quantity line can never be part of a valid recipe — it's
+        // dropped here rather than corrected to a value, matching the same "quantity
+        // must be greater than zero" rule enforced on manual entry.
+        ? (() => {
+            const seen = new Set();
+            // A duplicate ingredient (case-insensitive) can't be part of a valid recipe —
+            // same "combine into one line" rule as manual entry, applied here by keeping
+            // only the first occurrence of each name.
+            return item.recipe
+              .filter(l => l && typeof l === "object" && typeof l.name === "string" && l.name.trim() && Number.isFinite(l.quantity) && l.quantity > 0)
+              .map(l => ({
+                name: l.name.trim(),
+                quantity: l.quantity,
+                unit: typeof l.unit === "string" ? l.unit : "",
+                costPerUnit: clampDishField("ingredientCost", l.costPerUnit)
+              }))
+              .filter(l => {
+                const key = l.name.toLowerCase();
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+              });
+          })()
+        : null;
+      const validUpdatedAt = typeof item.updatedAt === "string" && !isNaN(Date.parse(item.updatedAt));
       return {
         id, name,
-        sellingPrice: Number.isFinite(item.sellingPrice) ? item.sellingPrice : 0,
-        // When a recipe exists, its line items are the source of truth for cost —
-        // recompute from them rather than trusting a possibly-stale stored total.
-        ingredientCost: (() => {
-          const recipe = Array.isArray(item.recipe) ? item.recipe.filter(l => l && typeof l.name === "string") : null;
-          if (recipe && recipe.length > 0) return recipeTotal(recipe);
-          return Number.isFinite(item.ingredientCost) ? item.ingredientCost : 0;
-        })(),
-        unitsSold: Number.isFinite(item.unitsSold) ? item.unitsSold : 0,
-        wasteUnits: Number.isFinite(item.wasteUnits) ? item.wasteUnits : 0,
-        recipe: Array.isArray(item.recipe) ? item.recipe.filter(l => l && typeof l.name === "string") : null,
+        sellingPrice: clampDishField("sellingPrice", item.sellingPrice),
+        // When a recipe exists, its (now-sanitised) line items are the source of truth
+        // for cost — recompute from them rather than trusting a possibly-stale stored total.
+        ingredientCost: sanitizedRecipe && sanitizedRecipe.length > 0
+          ? clampDishField("ingredientCost", recipeTotal(sanitizedRecipe))
+          : clampDishField("ingredientCost", item.ingredientCost),
+        unitsSold: clampDishField("unitsSold", item.unitsSold),
+        // Waste is a subset of sold/produced units in the manual form. Apply the
+        // same invariant to persisted, imported and restored dishes so an old or
+        // tampered record cannot report more wasted units than units sold.
+        wasteUnits: Math.min(clampDishField("wasteUnits", item.wasteUnits), clampDishField("unitsSold", item.unitsSold)),
+        recipe: sanitizedRecipe,
         // Per-dish timestamp — not shown in the UI yet, but needed so a future historical
         // comparison can tell which dishes changed since the last snapshot.
-        updatedAt: typeof item.updatedAt === "string" ? item.updatedAt : new Date().toISOString()
+        updatedAt: validUpdatedAt ? item.updatedAt : new Date().toISOString()
       };
     });
   }
@@ -1886,12 +2036,38 @@
     }
   });
 
+  // Snapshots are sanitised once here, at load time, so every downstream consumer —
+  // comparison, restoration, historical profitability — always works with corrected
+  // data and can never be broken by a corrupted or hand-edited snapshot entry.
+  function sanitizeLoadedSnapshots(parsed) {
+    const seenIds = new Set();
+    let fallbackId = Date.now();
+    return parsed.filter(item => item && typeof item === "object").map(item => {
+      let id = Number.isFinite(item.id) ? item.id : null;
+      if (id === null || seenIds.has(id)) {
+        while (seenIds.has(fallbackId)) fallbackId++;
+        id = fallbackId;
+      }
+      seenIds.add(id);
+      const label = typeof item.label === "string" && item.label.trim() ? item.label.trim() : "Untitled version";
+      const validSavedAt = typeof item.savedAt === "string" && !isNaN(Date.parse(item.savedAt));
+      const dishArray = Array.isArray(item.dishes) ? item.dishes : [];
+      return {
+        id,
+        label,
+        savedAt: validSavedAt ? item.savedAt : new Date(0).toISOString(),
+        dishes: sanitizeLoadedDishes(dishArray)
+      };
+    });
+  }
+
   function loadSnapshots() {
     try {
       const raw = localStorage.getItem(SNAPSHOTS_KEY);
       if (!raw) return [];
       const parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed : [];
+      if (!Array.isArray(parsed)) return [];
+      return sanitizeLoadedSnapshots(parsed);
     } catch (e) { return []; }
   }
 
@@ -1904,8 +2080,14 @@
   }
 
   function saveSnapshot(label) {
+    // Date.now() alone can collide when a user saves versions in rapid succession
+    // or when automated/browser operations happen within the same millisecond.
+    // Keep IDs monotonic and unique so restore, delete and comparison never target
+    // two historical versions at once.
+    let snapshotId = Date.now();
+    while (snapshots.some(s => s.id === snapshotId)) snapshotId++;
     const snap = {
-      id: Date.now(),
+      id: snapshotId,
       label: (label || "").trim() || `Snapshot \u2014 ${new Date().toLocaleDateString(CURRENCY_LOCALE, { day: "numeric", month: "short", year: "numeric" })}`,
       savedAt: new Date().toISOString(),
       dishes: JSON.parse(JSON.stringify(dishes)) // deep copy, frozen at this point in time
@@ -1934,6 +2116,7 @@
     if (!snap) return;
     const ok = confirm(`Restore "${snap.label}"? This replaces your current menu (${dishes.length} dish${dishes.length === 1 ? "" : "es"}) with the ${snap.dishes.length} dish${snap.dishes.length === 1 ? "" : "es"} saved in that version. If you want to keep your current menu too, save it as a version first.`);
     if (!ok) return;
+    dismissUndoToast(); // a pending delete-undo would splice into this new array at stale indices
     dishes = sanitizeLoadedDishes(JSON.parse(JSON.stringify(snap.dishes)));
     nextId = Math.max(...dishes.map(d => d.id), 0) + 1;
     saveDishes();
@@ -1966,7 +2149,11 @@
     const revenue = sellingPrice * unitsSold;
     const totalIngredientCost = ingredientCost * unitsSold;
     const grossProfit = sellingPrice - ingredientCost;
-    const foodCostPercent = sellingPrice > 0 ? (ingredientCost / sellingPrice) * 100 : 0;
+    // A zero-price dish has no meaningful food-cost ratio. Keep this explicitly
+    // unavailable rather than emitting Infinity: the UI already renders non-finite
+    // percentages as a dash, while null data is safer for downstream calculations,
+    // exports and tests than an unbounded sentinel.
+    const foodCostPercent = sellingPrice > 0 ? (ingredientCost / sellingPrice) * 100 : null;
     const grossMarginPercent = sellingPrice > 0 ? (grossProfit / sellingPrice) * 100 : 0;
     const totalGrossProfit = grossProfit * unitsSold;
     const wasteCost = wasteUnits * ingredientCost; // waste is pure cost, no offsetting revenue
@@ -2015,22 +2202,31 @@
       dish: d,
       unitShare: totalUnits > 0 ? (d.unitsSold / totalUnits) * 100 : 0,
       revenueShare: totalRevenue > 0 ? (d.revenue / totalRevenue) * 100 : 0,
-      profitShare: totalGrossProfit !== 0 ? (d.totalGrossProfit / totalGrossProfit) * 100 : 0
+      // Guarded at > 0, not just !== 0: a negative total flips every dish's sign
+      // and can push shares past 100%, which reads as actively wrong rather than
+      // just imprecise — safer to fall back to 0 than show inverted shares.
+      profitShare: totalGrossProfit > 0 ? (d.totalGrossProfit / totalGrossProfit) * 100 : 0
     })).sort((a, b) => b.dish.unitsSold - a.dish.unitsSold);
 
-    // Pareto concentration: what share of total gross profit comes from the top
-    // fifth (by units sold) of the menu?
+    // Pareto concentration: what share of total gross profit comes from the top fifth (by units sold) of the menu? Same > 0 guard as profitShare above a negative menu-wide total makes this percentage meaningless/inverted.
     const topCount = Math.max(1, Math.round(menu.dishCount * 0.2));
-    const topShareOfProfit = totalGrossProfit !== 0
+    const topShareOfProfit = totalGrossProfit > 0
       ? rows.slice(0, topCount).reduce((s, r) => s + r.dish.totalGrossProfit, 0) / totalGrossProfit * 100
       : 0;
 
     const corr = correlation(menu.dishes.map(d => d.unitsSold), menu.dishes.map(d => d.grossMarginPercent));
+    // A flat |r| >= 0.3 cutoff is only meaningful at large n. Measured against purely random (uncorrelated) menus, it "confidently" fired on ~80% of 3-dish menus and ~40% of 10-dish menus \u2014 mostly noise, not a real pattern. Fix: require at least 6 dishes, and scale the bar with n via the Fisher z-transformation significance threshold (p<0.10, appropriate for a directional heuristic rather than a clinical claim). Holds the false-positive rate at a steady ~10% regardless of menu size instead of it drifting with dish count.
     let corrLabel;
-    if (corr === null) corrLabel = "Not enough dishes yet to tell.";
-    else if (corr <= -0.3) corrLabel = "Your most popular dishes tend to carry lower margins \u2014 volume is concentrated in less profitable items.";
-    else if (corr >= 0.3) corrLabel = "Your most popular dishes also tend to carry higher margins \u2014 a healthy pairing of demand and profitability.";
-    else corrLabel = "No strong relationship between popularity and margin across your menu.";
+    if (menu.dishes.length < 6) {
+      corrLabel = "Not enough dishes yet for a reliable read.";
+    } else if (corr === null) {
+      corrLabel = "Can't assess this yet \u2014 units sold or margin are identical across every dish.";
+    } else {
+      const sigThreshold = Math.tanh(1.645 / Math.sqrt(menu.dishes.length - 3));
+      if (corr <= -sigThreshold) corrLabel = "Your most popular dishes may carry lower margins \u2014 volume could be concentrated in less profitable items.";
+      else if (corr >= sigThreshold) corrLabel = "Your most popular dishes may also carry higher margins \u2014 a promising pairing of demand and profitability.";
+      else corrLabel = "No reliable relationship between popularity and margin across your menu.";
+    }
 
     return { rows, topCount, topShareOfProfit, corr, corrLabel };
   }
@@ -2066,11 +2262,7 @@
     const benchmarkIsTarget = Number.isFinite(targetFoodCostPercent);
     const benchmarkLabel = benchmarkIsTarget ? "your target food cost" : "your menu average food cost";
 
-    // averageMargin must reflect the menu's actual average gross margin, always —
-    // never derived from benchmarkFoodCost/targetFoodCostPercent. Deriving it as
-    // (100 - benchmarkFoodCost) made setting a food-cost target silently change
-    // the margin target's "menu average" fallback, breaking the two systems'
-    // required independence.
+    // averageMargin must reflect the menu's actual average gross margin, always — never derived from benchmarkFoodCost/targetFoodCostPercent. Deriving it as (100 - benchmarkFoodCost) made setting a food-cost target silently change the margin target's "menu average" fallback, breaking the two systems' required independence.
     const averageMargin = dishCount > 0
       ? calculated.reduce((s, d) => s + d.grossMarginPercent, 0) / dishCount
       : 0;
@@ -2092,12 +2284,13 @@
 
   function categorize(dish, menu) {
     if (dish.ingredientCost > dish.sellingPrice) {
-      return { code: "loss", label: "Loss", icon: "\u25CF" };
+      return { code: "loss", label: "Loss", icon: "\u2716" };
     }
     if (menu.dishCount < 2) {
       return { code: "unranked", label: "Add another dish to compare", icon: "—" };
     }
-    const highSales = dish.unitsSold >= menu.averageUnitsSold * (1 - SALES_TOLERANCE);
+    // menu.averageUnitsSold === 0 only happens when every dish has 0 units sold — in that state nothing is genuinely "high sales" yet, so don't let the threshold collapse to 0 and vacuously flag every dish as highSales.
+    const highSales = menu.averageUnitsSold > 0 && dish.unitsSold >= menu.averageUnitsSold * (1 - SALES_TOLERANCE);
     const highMargin = dish.grossMarginPercent >= menu.averageMargin - MARGIN_TOLERANCE_POINTS;
 
     if (highSales && highMargin)  return { code: "strong",   label: "Strong",   icon: "\u2605" };
@@ -2137,12 +2330,16 @@
     return { monthlyImprovement, annualImprovement: monthlyImprovement * 12, gapPoints, confidence };
   }
 
-  // Distinct from opportunity(): that engine frames the benchmark gap as a cost
-  // problem ("cut ingredient cost"). This frames the same gap as a price lever,
-  // and only surfaces it where demand is proven (sales at/above menu average) and
-  // the gap is large enough to matter — raising price is lower-risk on a dish that's
-  // already selling well, and not worth flagging over a marginal difference.
+  // Distinct from opportunity(): that engine frames the benchmark gap as a cost problem ("cut ingredient cost"). This frames the same gap as a price lever, and only surfaces it where demand is proven (sales at/above menu average) and the gap is large enough to matter — raising price is lower-risk on a dish that's already selling well, and not worth flagging over a marginal difference.
   const PRICE_PLANNING_MIN_GAP_POINTS = 3;
+
+  // MAX_PRICE only blocks prices the app can't store. It doesn't stop a mathematically
+  // valid but commercially absurd jump — e.g. a low-priced side dish with an unusually
+  // high ingredient cost relative to its own price can solve out to 4-5x its current
+  // price, comfortably under MAX_PRICE, yet no customer would accept that in one step.
+  // Cap the suggestion at double the dish's current price; beyond that it's no longer
+  // a "raise the price" tip, so fall back to the cost-reduction lever instead.
+  const MAX_REASONABLE_PRICE_INCREASE_MULTIPLE = 2;
 
   function priceChangeOpportunity(dish, menu) {
     if (menu.dishCount === 0 || dish.sellingPrice <= 0 || dish.unitsSold <= 0) return null;
@@ -2152,6 +2349,12 @@
     if (gapPoints < PRICE_PLANNING_MIN_GAP_POINTS) return null;
 
     const targetPrice = dish.ingredientCost / (menu.benchmarkFoodCost / 100);
+    // A recommended price the app itself won't let anyone enter isn't an actionable
+    // suggestion — extreme ingredient cost combined with a tight benchmark can push
+    // this past MAX_PRICE. Bail out so bestOpportunity() falls back to the
+    // cost-reduction lever instead of proposing an impossible price.
+    if (targetPrice > MAX_PRICE) return null;
+    if (targetPrice > dish.sellingPrice * MAX_REASONABLE_PRICE_INCREASE_MULTIPLE) return null;
     const priceDelta = targetPrice - dish.sellingPrice;
     if (priceDelta <= 0) return null;
     const monthlyImprovement = priceDelta * dish.unitsSold;
@@ -2205,6 +2408,9 @@
     const breakEvenRevenue = marginRatio > 0 ? totalCosts / marginRatio : null;
     const labourCostPercent = (labourCost !== null && menu.totalRevenue > 0) ? (labourCost / menu.totalRevenue) * 100 : null;
     const salesPerLabourHour = (labourHours !== null && labourHours > 0) ? menu.totalRevenue / labourHours : null;
+    // Prime cost = COGS + labour. Waste is already-incurred ingredient cost (see
+    // totalWasteCost above), so it belongs in COGS here too — otherwise prime cost
+    // understates the same cost base that net profit and break-even already charge for.
     const primeCostPercent = (labourCost !== null && menu.totalRevenue > 0) ? ((menu.totalIngredientCost + labourCost) / menu.totalRevenue) * 100 : null;
     return { totalOverheads, effectiveLabourCost, totalFixedCosts, totalWasteCost, totalCosts, grossProfit, netProfit, marginRatio, breakEvenRevenue, labourCostPercent, salesPerLabourHour, primeCostPercent };
   }
@@ -2218,7 +2424,9 @@
   // stops paying for itself?"
   function breakEvenUnits(currentMonthlyProfit, newUnitMargin) {
     if (newUnitMargin <= 0) return null; // can never break even — every sale loses money
-    return currentMonthlyProfit / newUnitMargin;
+    // Floor at 0: if today's baseline is already a loss (currentMonthlyProfit <= 0),
+    // any positive-margin sale already beats it — there's no meaningful "units needed".
+    return Math.max(0, currentMonthlyProfit / newUnitMargin);
   }
 
   function costScenario(dish, testCost, menu) {
@@ -2269,9 +2477,10 @@
   function fmtCurrencyCompact(value) {
     if (!Number.isFinite(value)) return "—";
     const abs = Math.abs(value);
-    if (abs >= 1000) {
-      return (value < 0 ? "\u2212" : "") + "£" + (abs / 1000).toFixed(1) + "k";
-    }
+    const sign = value < 0 ? "\u2212" : "";
+    if (abs >= 1000000000) return sign + "£" + (abs / 1000000000).toFixed(1) + "bn";
+    if (abs >= 1000000) return sign + "£" + (abs / 1000000).toFixed(1) + "m";
+    if (abs >= 1000) return sign + "£" + (abs / 1000).toFixed(1) + "k";
     return fmtCurrency(value);
   }
 
@@ -2280,8 +2489,16 @@
     return `${sign}${fmtCurrency(Math.abs(value))}`;
   }
 
+  function fmtSignedPoints(value) {
+    const sign = value > 0 ? "+" : value < 0 ? "\u2212" : "";
+    return `${sign}${Math.abs(value).toFixed(1)}pts`;
+  }
+
   function fmtPercent(value) {
     if (!Number.isFinite(value)) return "—";
+    // Display-only ceiling: an extreme cost-to-price ratio (e.g. a near-MAX_COST ingredient against a near-zero price) can produce a raw percentage with 8+ digits, which breaks the compact badge/KPI layouts. The underlying number used for categorisation, sorting and opportunity math is untouched.
+    if (value > 9999) return "9999%+";
+    if (value < -9999) return "\u22129999%+";
     return `${value.toFixed(1)}%`;
   }
 
@@ -2292,7 +2509,10 @@
   }
 
   function recipeTotal(recipe) {
-    return (recipe || []).reduce((s, line) => s + (Number(line.quantity) || 0) * (Number(line.costPerUnit) || 0), 0);
+    // Rounded to the penny so floating-point drift (e.g. 0.1 + 0.2) never leaks into
+    // stored ingredientCost, margin calculations, or snapshot comparisons.
+    const raw = (recipe || []).reduce((s, line) => s + (Number(line.quantity) || 0) * (Number(line.costPerUnit) || 0), 0);
+    return Math.round(raw * 100) / 100;
   }
 
   // Task 100: when a library ingredient's price changes, every dish recipe referencing
@@ -2313,7 +2533,9 @@
         }
       });
       if (touched) {
-        d.ingredientCost = recipeTotal(d.recipe);
+        // Same bound as every other cost entry point — a library price change must
+        // never push a dish's stored cost past MAX_COST unclamped.
+        d.ingredientCost = clampDishField("ingredientCost", recipeTotal(d.recipe));
         d.updatedAt = new Date().toISOString();
         changedCount++;
       }
@@ -2378,11 +2600,14 @@
       else el.removeAttribute("aria-current");
     });
 
+    if (name === "overview") renderOverview();
+    if (name === "menu") renderMenu();
+    if (name === "insights") renderInsights();
     if (name === "scenarios") renderScenarios();
     if (name === "plan") renderActionPlan();
     if (name === "profit") renderProfitControl();
     window.scrollTo({ top: 0 });
-
+    
     const heading = document.querySelector(`#screen-${name} .page-header h1`);
     if (heading) heading.focus();
   }
@@ -2409,17 +2634,39 @@
     emptyEl.style.display = "none";
     contentEl.style.display = "block";
 
-    // Hero: biggest opportunity
-    let biggest = null;
+    // Hero: a loss-making dish always outranks a mere cost-optimisation opportunity —
+    // matches how buildInsightRanking and the Action Plan already treat "loss" as
+    // priority 0, so the headline metric never contradicts what Insights says.
+    let worstLoss = null;
     menu.dishes.forEach(d => {
-      const opp = bestOpportunity(d, menu);
-      if (opp && (!biggest || opp.monthlyImprovement > biggest.opp.monthlyImprovement)) {
-        biggest = { dish: d, opp };
-      }
+      if (categorize(d, menu).code !== "loss") return;
+      const lossPerMonth = (d.ingredientCost - d.sellingPrice) * d.unitsSold;
+      if (!worstLoss || lossPerMonth > worstLoss.lossPerMonth) worstLoss = { dish: d, lossPerMonth };
     });
 
+    let biggest = null;
+    if (!worstLoss) {
+      menu.dishes.forEach(d => {
+        const opp = bestOpportunity(d, menu);
+        if (opp && (!biggest || opp.monthlyImprovement > biggest.opp.monthlyImprovement)) {
+          biggest = { dish: d, opp };
+        }
+      });
+    }
+
     const heroEl = document.getElementById("heroCard");
-    if (biggest) {
+    if (worstLoss) {
+      heroEl.classList.add("has-opportunity");
+      heroEl.innerHTML = `
+        <div class="hero-top"><div class="eyebrow">Losing money</div></div>
+        <h2>${esc(worstLoss.dish.name)}</h2>
+        <p class="hero-detail">Ingredient cost (${fmtCurrency(worstLoss.dish.ingredientCost)}) is higher than its selling price (${fmtCurrency(worstLoss.dish.sellingPrice)}) — every sale currently loses money.</p>
+        <div class="hero-potential-label">Monthly loss</div>
+        <div class="hero-potential-value num">${fmtCurrency(worstLoss.lossPerMonth)}</div>
+        <p style="font-size:12px; color:var(--text-muted); margin-top:var(--space-1);">Fix the price or cost, or remove the dish.</p>
+        <button class="btn btn-tertiary" data-open-detail="${worstLoss.dish.id}">View dish &rarr;</button>
+      `;
+    } else if (biggest) {
       heroEl.classList.add("has-opportunity");
       heroEl.innerHTML = `
         <div class="hero-top"><div class="eyebrow">Biggest opportunity</div></div>
@@ -2439,6 +2686,7 @@
         <p class="hero-empty">Nothing stands out as an immediate opportunity right now — check Insights for the fuller picture.</p>
       `;
     }
+    
     heroEl.querySelectorAll("[data-open-detail]").forEach(btn =>
       btn.addEventListener("click", () => openDetail(Number(btn.dataset.openDetail)))
     );
@@ -2721,7 +2969,7 @@
           </div>
           <div class="field">
             <label for="draftPrice">Selling price (£)</label>
-            <input id="draftPrice" type="number" inputmode="decimal" step="0.01" min="0" max="${MAX_PRICE}" placeholder="15.00" enterkeyhint="next" aria-required="true" value="${d.sellingPrice ?? ""}">
+            <input id="draftPrice" type="text" inputmode="decimal" placeholder="15.00" enterkeyhint="next" aria-required="true" value="${d.sellingPrice ?? ""}">
           </div>
           <div class="field" id="draftCostFieldWrap">
             ${d.recipe ? `
@@ -2729,16 +2977,16 @@
               <div style="padding:var(--space-3); background:var(--canvas); border:1px solid var(--divider); border-radius:var(--radius-sm); font-weight:600;" class="num">${fmtCurrency(recipeTotal(d.recipe))} <span style="font-weight:400; color:var(--text-muted); font-size:12px;">(from recipe below)</span></div>
             ` : `
               <label for="draftCost">Ingredient cost (£)</label>
-              <input id="draftCost" type="number" inputmode="decimal" step="0.01" min="0" max="${MAX_COST}" placeholder="5.20" enterkeyhint="next" aria-required="true" value="${d.ingredientCost ?? ""}">
+              <input id="draftCost" type="text" inputmode="decimal" placeholder="5.20" enterkeyhint="next" aria-required="true" value="${d.ingredientCost ?? ""}">
             `}
           </div>
           <div class="field">
             <label for="draftUnits">Monthly units sold</label>
-            <input id="draftUnits" type="number" inputmode="numeric" step="1" min="0" max="${MAX_UNITS}" placeholder="420" enterkeyhint="done" aria-required="true" value="${d.unitsSold ?? ""}">
+            <input id="draftUnits" type="text" inputmode="numeric" placeholder="420" enterkeyhint="done" aria-required="true" value="${d.unitsSold ?? ""}">
           </div>
           <div class="field">
             <label for="draftWaste">Monthly units wasted (optional)</label>
-            <input id="draftWaste" type="number" inputmode="numeric" step="1" min="0" max="${MAX_UNITS}" placeholder="0" enterkeyhint="done" value="${d.wasteUnits ?? ""}">
+            <input id="draftWaste" type="text" inputmode="numeric" placeholder="0" enterkeyhint="done" value="${d.wasteUnits ?? ""}">
           </div>
         </div>
 
@@ -2764,12 +3012,15 @@
     `;
 
     document.getElementById("draftName").addEventListener("input", (e) => { editingDraft.name = e.target.value; });
-    document.getElementById("draftPrice").addEventListener("input", (e) => { editingDraft.sellingPrice = e.target.value === "" ? null : Number(e.target.value); });
-    document.getElementById("draftCost").addEventListener("input", (e) => { editingDraft.ingredientCost = e.target.value === "" ? null : Number(e.target.value); });
-    document.getElementById("draftUnits").addEventListener("input", (e) => { editingDraft.unitsSold = e.target.value === "" ? null : Number(e.target.value); });
-    document.getElementById("draftWaste").addEventListener("input", (e) => { editingDraft.wasteUnits = e.target.value === "" ? null : Number(e.target.value); });
-    const draftCostInput = document.getElementById("draftCost");
-    if (draftCostInput) draftCostInput.addEventListener("input", (e) => { editingDraft.ingredientCost = e.target.value === "" ? null : Number(e.target.value); });
+    // Parsed with cleanNumber() \u2014 the same function CSV import uses \u2014 so pasting a
+    // currency-formatted or comma-thousands value (e.g. "£15.00", "1,200") behaves
+    // identically here and in a CSV file. These were previously type="number" inputs
+    // parsed with a bare Number(), which silently rejected exactly the formats CSV
+    // import accepts: a real "CSV accepts what the UI rejects" gap.
+    document.getElementById("draftPrice").addEventListener("input", (e) => { editingDraft.sellingPrice = e.target.value.trim() === "" ? null : cleanNumber(e.target.value); });
+    document.getElementById("draftCost").addEventListener("input", (e) => { editingDraft.ingredientCost = e.target.value.trim() === "" ? null : cleanNumber(e.target.value); });
+    document.getElementById("draftUnits").addEventListener("input", (e) => { editingDraft.unitsSold = e.target.value.trim() === "" ? null : cleanNumber(e.target.value); });
+    document.getElementById("draftWaste").addEventListener("input", (e) => { editingDraft.wasteUnits = e.target.value.trim() === "" ? null : cleanNumber(e.target.value); });
     document.getElementById("draftRecipeToggle").addEventListener("change", (e) => {
       editingDraft.recipe = e.target.checked ? (editingDraft.recipe || []) : null;
       renderDishForm();
@@ -2810,13 +3061,13 @@
       <div style="border:1px solid var(--divider); border-radius:var(--radius-sm); padding:var(--space-3); margin-bottom:var(--space-4);">
         ${d.recipe.map((line, i) => `
           <div style="display:flex; gap:var(--space-2); align-items:center; margin-bottom:var(--space-2); flex-wrap:wrap;">
-            <input type="text" data-recipe-field="name" data-recipe-index="${i}" placeholder="Ingredient" value="${esc(line.name || "")}" list="ingredientLibraryDatalist" style="flex:2; min-width:100px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
-            <input type="number" data-recipe-field="quantity" data-recipe-index="${i}" inputmode="decimal" placeholder="Qty" step="0.01" min="0" value="${line.quantity ?? ""}" style="width:70px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
-            <input type="text" data-recipe-field="unit" data-recipe-index="${i}" placeholder="unit" value="${esc(line.unit || "")}" style="width:60px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="text" data-recipe-field="name" data-recipe-index="${i}" aria-label="Recipe ingredient ${i + 1}" placeholder="Ingredient" value="${esc(line.name || "")}" list="ingredientLibraryDatalist" style="flex:2; min-width:100px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="number" data-recipe-field="quantity" data-recipe-index="${i}" aria-label="Recipe quantity ${i + 1}" inputmode="decimal" placeholder="Qty" step="0.01" min="0.01" value="${line.quantity ?? ""}" style="width:70px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="text" data-recipe-field="unit" data-recipe-index="${i}" aria-label="Recipe unit ${i + 1}" placeholder="unit" value="${esc(line.unit || "")}" style="width:60px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
             <span style="font-size:12px; color:var(--text-muted);">@</span>
-            <input type="number" data-recipe-field="costPerUnit" data-recipe-index="${i}" inputmode="decimal" placeholder="£/unit" step="0.0001" min="0" value="${line.costPerUnit ?? ""}" style="width:80px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
-            <button type="button" class="btn btn-tertiary btn-sm" data-save-line-to-lib="${i}" title="Save to ingredient library">Save</button>
-            <button type="button" class="btn btn-tertiary btn-sm" data-remove-line="${i}">Remove</button>
+            <input type="number" data-recipe-field="costPerUnit" data-recipe-index="${i}" aria-label="Recipe cost per unit ${i + 1}" inputmode="decimal" placeholder="£/unit" step="0.0001" min="0" value="${line.costPerUnit ?? ""}" style="width:80px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <button type="button" class="btn btn-tertiary btn-sm" data-save-line-to-lib="${i}" aria-label="Save recipe ingredient ${i + 1} to library" title="Save to ingredient library">Save</button>
+            <button type="button" class="btn btn-tertiary btn-sm" data-remove-line="${i}" aria-label="Remove recipe ingredient ${i + 1}">Remove</button>
           </div>
         `).join("")}
         <button type="button" class="btn btn-secondary btn-sm" id="addRecipeLineBtn">+ Add ingredient</button>
@@ -2832,7 +3083,7 @@
         // Autofill unit/cost from the library on a name match, but only into empty
         // fields — never overwrite something the user has already typed for this line.
         if (field === "name") {
-          const match = ingredientLibrary.find(li => li.name.trim().toLowerCase() === String(val).trim().toLowerCase());
+          const match = ingredientLibraryIndex.get(String(val).trim().toLowerCase());
           if (match) {
             if (!editingDraft.recipe[i].unit) editingDraft.recipe[i].unit = match.unit;
             if (editingDraft.recipe[i].costPerUnit === null || editingDraft.recipe[i].costPerUnit === undefined) editingDraft.recipe[i].costPerUnit = match.costPerUnit;
@@ -2849,10 +3100,12 @@
     wrap.querySelectorAll("[data-save-line-to-lib]").forEach(btn => {
       btn.addEventListener("click", () => {
         const line = editingDraft.recipe[Number(btn.dataset.saveLineToLib)];
-        if (!line.name || !line.name.trim() || !Number.isFinite(line.costPerUnit)) {
-          alert("Enter an ingredient name and cost per unit before saving to the library.");
+        const libCostError = dishFieldError("ingredientCost", line.costPerUnit);
+        if (!line.name || !line.name.trim() || libCostError) {
+          alert(line.name && line.name.trim() && libCostError ? `Cost per unit: ${libCostError}` : "Enter an ingredient name and cost per unit before saving to the library.");
           return;
         }
+        
         const existingIdx = ingredientLibrary.findIndex(li => li.name.trim().toLowerCase() === line.name.trim().toLowerCase());
         if (existingIdx !== -1) ingredientLibrary[existingIdx] = { ...ingredientLibrary[existingIdx], unit: line.unit, costPerUnit: line.costPerUnit };
         else ingredientLibrary.push({ id: nextIngredientId++, name: line.name.trim(), unit: line.unit, costPerUnit: line.costPerUnit });
@@ -2863,14 +3116,29 @@
     });
     wrap.querySelectorAll("[data-remove-line]").forEach(btn => {
       btn.addEventListener("click", () => {
+        // Re-render just the recipe editor, not the whole dish form (name/price/
+        // units/waste fields) — with a large recipe, routing every line add/remove
+        // through renderDishForm() meant every one of those unrelated inputs was
+        // destroyed and recreated too, on top of the O(n) recipe line rebuild that's
+        // already unavoidable here. That compounds badly once someone is adding
+        // ingredients one at a time on a big recipe.
         editingDraft.recipe.splice(Number(btn.dataset.removeLine), 1);
-        renderDishForm();
+        renderRecipeEditor();
+        const costFieldWrap = document.getElementById("draftCostFieldWrap");
+        const numEl = costFieldWrap && costFieldWrap.querySelector(".num");
+        if (numEl) numEl.firstChild.textContent = fmtCurrency(recipeTotal(editingDraft.recipe)) + " ";
       });
     });
     const addBtn = document.getElementById("addRecipeLineBtn");
     if (addBtn) addBtn.addEventListener("click", () => {
       editingDraft.recipe.push({ name: "", quantity: null, unit: "", costPerUnit: null });
-      renderDishForm();
+      renderRecipeEditor();
+      // Focus the newly added line's name field so building a large recipe by
+      // repeatedly clicking "+ Add ingredient" doesn't require re-finding your
+      // place in the list after each rebuild.
+      const nameInputs = wrap.querySelectorAll('[data-recipe-field="name"]');
+      const lastInput = nameInputs[nameInputs.length - 1];
+      if (lastInput) lastInput.focus();
     });
   }
 
@@ -2880,14 +3148,18 @@
     const errors = [];
 
     const name = (d.name || "").trim();
-    const price = d.sellingPrice;
-    const cost = d.recipe ? recipeTotal(d.recipe) : d.ingredientCost;
+    // Rounded the same way as CSV import (round2, see parseCsv) so a value typed or
+    // pasted with extra decimal places (e.g. "9.999") commits as exactly what the £
+    // display shows everywhere else, instead of silently keeping hidden precision
+    // that only resurfaces if you reopen the dish to edit it. Also cleans up
+    // ordinary floating-point drift in recipe totals (e.g. 0.1 + 0.2).
+    const price = round2(d.sellingPrice);
+    const cost = d.recipe ? round2(recipeTotal(d.recipe)) : round2(d.ingredientCost);
     const units = d.unitsSold;
 
     if (!name) errors.push("Enter a dish name.");
-    if (price === null || !Number.isFinite(price)) errors.push("Enter a selling price.");
-    else if (price < 0) errors.push("Selling price must be zero or greater.");
-    else if (price > MAX_PRICE) errors.push(`Selling price must be ${fmtCurrency(MAX_PRICE)} or less.`);
+    const priceError = dishFieldError("sellingPrice", price);
+    if (priceError) errors.push(price === null ? "Enter a selling price." : priceError);
     if (d.recipe) {
       if (d.recipe.length === 0) errors.push("Add at least one ingredient to the recipe, or switch back to manual entry.");
       const seenIngredientNames = new Set();
@@ -2898,23 +3170,23 @@
           if (seenIngredientNames.has(key)) errors.push(`Recipe line ${i + 1}: "${line.name.trim()}" is already used elsewhere in this recipe — combine them into one line instead.`);
           seenIngredientNames.add(key);
         }
-        if (!Number.isFinite(line.quantity) || line.quantity < 0) errors.push(`Recipe line ${i + 1}: enter a valid quantity.`);
-        if (!Number.isFinite(line.costPerUnit) || line.costPerUnit < 0) errors.push(`Recipe line ${i + 1}: enter a valid cost per unit.`);
+        if (!Number.isFinite(line.quantity) || line.quantity <= 0) errors.push(`Recipe line ${i + 1}: enter a quantity greater than zero.`);
+        const costPerUnitError = dishFieldError("ingredientCost", line.costPerUnit);
+        if (costPerUnitError) errors.push(`Recipe line ${i + 1}: ${costPerUnitError.charAt(0).toLowerCase()}${costPerUnitError.slice(1)}`);
       });
-      if (!Number.isFinite(cost) || cost > MAX_COST) errors.push(`Recipe total cost must be ${fmtCurrency(MAX_COST)} or less — check for a mistyped quantity or cost per unit.`);
+      const recipeCostError = dishFieldError("ingredientCost", cost);
+      if (recipeCostError) errors.push(cost !== null && cost > MAX_COST ? `Recipe total cost must be ${fmtCurrency(MAX_COST)} or less — check for a mistyped quantity or cost per unit.` : recipeCostError);
     } else {
-      if (cost === null || !Number.isFinite(cost)) errors.push("Enter an ingredient cost.");
-      else if (cost < 0) errors.push("Ingredient cost must be zero or greater.");
-      else if (cost > MAX_COST) errors.push(`Ingredient cost must be ${fmtCurrency(MAX_COST)} or less.`);
+      const costError = dishFieldError("ingredientCost", cost);
+      if (costError) errors.push(cost === null ? "Enter an ingredient cost." : costError);
     }
-    if (units === null || !Number.isFinite(units)) errors.push("Enter a units sold figure.");
-    else if (!Number.isInteger(units) || units < 0) errors.push("Units sold must be a whole number, zero or greater.");
-    else if (units > MAX_UNITS) errors.push(`Units sold must be ${MAX_UNITS.toLocaleString()} or less.`);
+    const unitsError = dishFieldError("unitsSold", units);
+    if (unitsError) errors.push(units === null ? "Enter a units sold figure." : unitsError);
 
     const waste = d.wasteUnits === null || d.wasteUnits === undefined ? 0 : d.wasteUnits;
-    if (!Number.isFinite(waste) || waste < 0) errors.push("Units wasted must be zero or greater.");
-    else if (!Number.isInteger(waste)) errors.push("Units wasted must be a whole number.");
-    else if (waste > MAX_UNITS) errors.push(`Units wasted must be ${MAX_UNITS.toLocaleString()} or less.`);
+    const wasteError = dishFieldError("wasteUnits", waste);
+    if (wasteError) errors.push(wasteError);
+    else if (units !== null && waste > units) errors.push("Units wasted can't be greater than units sold.");
 
     if (name) {
       const isDupe = dishes.some(x => x.id !== d.id && x.name.trim().toLowerCase() === name.toLowerCase());
@@ -2961,6 +3233,12 @@
     setTimeout(() => el.remove(), 4000);
   }
 
+  function dismissUndoToast() {
+    const existing = document.getElementById("undoToast");
+    if (existing) existing.remove();
+    if (undoToastTimer) clearTimeout(undoToastTimer);
+  }
+
   function showUndoToast(message, onUndo) {
     const existing = document.getElementById("undoToast");
     if (existing) existing.remove();
@@ -2993,16 +3271,33 @@
   function bulkApplyPricePercent() {
     const input = document.getElementById("bulkPricePercent");
     const pct = Number(input.value);
-    if (!Number.isFinite(pct) || pct === 0 || selectedDishIds.size === 0) return;
+    if (selectedDishIds.size === 0) return;
+    if (!Number.isFinite(pct) || pct === 0) { alert("Enter a non-zero percentage, e.g. 5 or -10."); return; }
+    const accepted = [];
+    const rejected = [];
     dishes.forEach(d => {
       if (selectedDishIds.has(d.id)) {
-        d.sellingPrice = Math.round(d.sellingPrice * (1 + pct / 100) * 100) / 100;
+        const newPrice = Math.round(d.sellingPrice * (1 + pct / 100) * 100) / 100;
+        if (!Number.isFinite(newPrice) || newPrice < 0 || newPrice > MAX_PRICE) {
+          rejected.push({ name: d.name, attempted: newPrice });
+          return;
+        }
+        d.sellingPrice = newPrice;
         d.updatedAt = new Date().toISOString();
+        accepted.push(d.name);
       }
     });
     input.value = "";
     saveDishes();
     renderAll();
+    showBulkPriceResult(accepted, rejected);
+  }
+
+  function showBulkPriceResult(accepted, rejected) {
+    if (rejected.length === 0) return;
+    const lines = rejected.map(r => `${r.name}: would be ${Number.isFinite(r.attempted) ? fmtCurrency(r.attempted) : "invalid"} (must be ${fmtCurrency(0)}–${fmtCurrency(MAX_PRICE)})`);
+    const summary = `${accepted.length} price${accepted.length === 1 ? "" : "s"} updated. ${rejected.length} rejected:\n${lines.join("\n")}`;
+    alert(summary);
   }
 
   function bulkDeleteSelected() {
@@ -3166,6 +3461,7 @@
   }
 
   function renderIngredientLibraryList() {
+    ingredientLibraryIndex = new Map(ingredientLibrary.map(i => [i.name.trim().toLowerCase(), i]));
     const listEl = document.getElementById("ingredientLibraryList");
     const datalistEl = document.getElementById("ingredientLibraryDatalist");
     if (!listEl) return;
@@ -3181,7 +3477,7 @@
       listEl.querySelectorAll("[data-delete-ingredient]").forEach(btn => {
         btn.addEventListener("click", () => {
           const item = ingredientLibrary.find(i => i.id === Number(btn.dataset.deleteIngredient));
-          if (!item || !confirm(`Remove "${item.name}" from the ingredient library?`)) return;
+          if (!item || !confirm(`Remove "${item.name}" from the ingredient library? This can't be undone.`)) return;
           ingredientLibrary = ingredientLibrary.filter(i => i.id !== Number(btn.dataset.deleteIngredient));
           saveIngredientLibrary();
           renderIngredientLibraryList();
@@ -3228,8 +3524,12 @@
 
     // Oldest saved version first, ending with the current menu, so the table reads
     // as a timeline rather than most-recent-first (which populateCompareSelects uses instead).
-    const periods = snapshots.slice().reverse().map(s => ({ label: s.label, savedAt: s.savedAt, dishes: s.dishes }));
+    // Sorted explicitly by savedAt rather than trusting snapshots' array position (which only
+    // reflects save order and can diverge from real chronology if the device clock ever moves
+    // backward between two saves).
+    const periods = snapshots.map(s => ({ label: s.label, savedAt: s.savedAt, dishes: s.dishes }));
     periods.push({ label: "Current menu", savedAt: new Date().toISOString(), dishes });
+    periods.sort((a, b) => new Date(a.savedAt).getTime() - new Date(b.savedAt).getTime());
 
     if (periods.length < 2) {
       mount.innerHTML = `<p style="font-size:13px; color:var(--text-muted);">Save at least one version to see how profitability has changed over time.</p>`;
@@ -3343,22 +3643,50 @@
     const mapB = new Map(menuB.dishes.map(d => [keyOf(d), d]));
     const allKeys = new Set([...mapA.keys(), ...mapB.keys()]);
 
-    const rows = [];
+    // A dish that was only renamed between versions has no shared key (name-based
+    // matching can't see it), so it would otherwise show up as an unrelated Removed
+    // dish plus an unrelated Added dish, hiding the fact that it's the same dish.
+    // Collected separately below and reconciled by identical values before the final
+    // Removed/Added rows are built.
+    const removedCandidates = [], addedCandidates = [], rows = [];
     allKeys.forEach(key => {
       const a = mapA.get(key), b = mapB.get(key);
-      if (a && !b) { rows.push({ name: a.name, status: "Removed", detail: "", sort: -1 }); return; }
-      if (!a && b) { rows.push({ name: b.name, status: "Added", detail: "", sort: -1 }); return; }
+      if (a && !b) { removedCandidates.push(a); return; }
+      if (!a && b) { addedCandidates.push(b); return; }
       const priceDelta = b.sellingPrice - a.sellingPrice;
       const costDelta = b.ingredientCost - a.ingredientCost;
+      const marginDelta = b.grossMarginPercent - a.grossMarginPercent;
       const unitsDelta = b.unitsSold - a.unitsSold;
       const profitDelta = b.totalGrossProfit - a.totalGrossProfit;
       if (priceDelta === 0 && costDelta === 0 && unitsDelta === 0) return; // unchanged — omit
       const parts = [];
       if (priceDelta !== 0) parts.push(`price ${fmtSigned(priceDelta)}`);
       if (costDelta !== 0) parts.push(`cost ${fmtSigned(costDelta)}`);
+      if (Math.abs(marginDelta) >= 0.05) parts.push(`margin ${fmtSignedPoints(marginDelta)}`);
       if (unitsDelta !== 0) parts.push(`units ${unitsDelta > 0 ? "+" : ""}${unitsDelta}`);
       rows.push({ name: a.name, status: "Changed", detail: parts.join(" \u00b7 "), profitDelta, sort: -Math.abs(profitDelta) });
     });
+
+    // Where exactly one removed dish and one added dish share identical price,
+    // cost and units, treat that pair as a rename rather than two unrelated
+    // dishes. Ambiguous cases (more than one candidate sharing the same values)
+    // are left as separate Removed/Added rows rather than guessing which pair.
+    const dishValueKey = d => `${d.sellingPrice}|${d.ingredientCost}|${d.unitsSold}`;
+    const removedByValue = new Map();
+    removedCandidates.forEach(d => { const k = dishValueKey(d); (removedByValue.get(k) || removedByValue.set(k, []).get(k)).push(d); });
+    const addedByValue = new Map();
+    addedCandidates.forEach(d => { const k = dishValueKey(d); (addedByValue.get(k) || addedByValue.set(k, []).get(k)).push(d); });
+    const renamedFrom = new Set(), renamedTo = new Set();
+    removedByValue.forEach((removedGroup, key) => {
+      const addedGroup = addedByValue.get(key);
+      if (removedGroup.length === 1 && addedGroup && addedGroup.length === 1) {
+        rows.push({ name: addedGroup[0].name, status: "Renamed", detail: `was "${removedGroup[0].name}"`, profitDelta: 0, sort: 0 });
+        renamedFrom.add(removedGroup[0].name);
+        renamedTo.add(addedGroup[0].name);
+      }
+    });
+    removedCandidates.forEach(d => { if (!renamedFrom.has(d.name)) rows.push({ name: d.name, status: "Removed", detail: "", sort: -1 }); });
+    addedCandidates.forEach(d => { if (!renamedTo.has(d.name)) rows.push({ name: d.name, status: "Added", detail: "", sort: -1 }); });
 
     rows.sort((r1, r2) => r1.sort - r2.sort);
 
@@ -3596,7 +3924,7 @@
     );
     document.getElementById("marginTargetInput").addEventListener("change", (e) => {
       const v = Number(e.target.value);
-      marginTargetPercent = (e.target.value !== "" && Number.isFinite(v) && v > 0 && v < 100) ? v : null;
+      marginTargetPercent = (e.target.value !== "" && Number.isFinite(v) && v >= 0.5 && v < 100) ? v : null;
       saveMarginTarget();
       renderInsights();
     });
@@ -3705,14 +4033,15 @@
     } = calcProfitControl(menu);
 
     el.innerHTML = `
-      ${menu.dishCount === 0 ? `<div class="empty-state"><h2>Nothing to show yet</h2><p>Add dishes to your menu to see gross profit and break-even figures here.</p></div>` : ""}
+      ${menu.dishCount === 0 ? emptyStateHtml() : `
       <div class="kpi-strip" style="margin-bottom:var(--space-7);">
-        <div class="kpi"><div class="kpi-label">Gross profit / mo</div><div class="kpi-value num">${fmtCurrencyCompact(grossProfit)}</div></div>
-        <div class="kpi"><div class="kpi-label">Overheads + labour / mo</div><div class="kpi-value num">${fmtCurrencyCompact(totalFixedCosts)}</div></div>
-        ${totalWasteCost > 0 ? `<div class="kpi"><div class="kpi-label">Waste cost / mo</div><div class="kpi-value num">${fmtCurrencyCompact(totalWasteCost)}</div></div>` : ""}
-        <div class="kpi"><div class="kpi-label">Net profit / mo</div><div class="kpi-value num" style="color:${netProfit >= 0 ? "var(--positive)" : "var(--loss)"};">${fmtCurrencyCompact(netProfit)}</div></div>
-        <div class="kpi"><div class="kpi-label">Break-even revenue</div><div class="kpi-value num">${breakEvenRevenue !== null ? fmtCurrencyCompact(breakEvenRevenue) : "\u2014"}</div></div>
+        <div class="kpi"><div class="kpi-label">Gross profit / mo</div><div class="kpi-value num">${fmtCurrency(grossProfit)}</div></div>
+        <div class="kpi"><div class="kpi-label">Overheads + labour / mo</div><div class="kpi-value num">${fmtCurrency(totalFixedCosts)}</div></div>
+        ${totalWasteCost > 0 ? `<div class="kpi"><div class="kpi-label">Waste cost / mo</div><div class="kpi-value num">${fmtCurrency(totalWasteCost)}</div></div>` : ""}
+        <div class="kpi"><div class="kpi-label">Net profit / mo</div><div class="kpi-value num" style="color:${netProfit >= 0 ? "var(--positive)" : "var(--loss)"};">${fmtCurrency(netProfit)}</div></div>
+        <div class="kpi"><div class="kpi-label">Break-even revenue</div><div class="kpi-value num">${breakEvenRevenue !== null ? fmtCurrency(breakEvenRevenue) : "\u2014"}</div></div>
       </div>
+      `}
 
       ${menu.totalWasteCost > 0 ? `
       <div class="section">
@@ -3744,9 +4073,9 @@
           <p style="font-size:13px; color:var(--text-secondary); margin-bottom:var(--space-4);">Tracked separately from overheads so labour-specific ratios can be calculated. Included in net profit and break-even above.</p>
           <div style="display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-4);">
             <label for="labourCostInput" style="font-size:13px; color:var(--text-secondary);">Monthly labour cost (£)</label>
-            <input type="number" id="labourCostInput" inputmode="decimal" step="0.01" min="0" placeholder="e.g. 8000" value="${labourCost === null ? "" : labourCost}" style="width:120px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="number" id="labourCostInput" inputmode="decimal" step="0.01" min="0" max="${MAX_LABOUR_COST}" placeholder="e.g. 8000" value="${labourCost === null ? "" : labourCost}" style="width:120px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
             <label for="labourHoursInput" style="font-size:13px; color:var(--text-secondary);">Monthly staff hours</label>
-            <input type="number" id="labourHoursInput" inputmode="decimal" step="1" min="0" placeholder="e.g. 900" value="${labourHours === null ? "" : labourHours}" style="width:100px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="number" id="labourHoursInput" inputmode="decimal" step="1" min="0" max="${MAX_LABOUR_HOURS}" placeholder="e.g. 900" value="${labourHours === null ? "" : labourHours}" style="width:100px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
           </div>
           <div class="kpi-strip" style="margin-bottom:0;">
             <div class="kpi"><div class="kpi-label">Labour cost %</div><div class="kpi-value num">${labourCostPercent !== null ? fmtPercent(labourCostPercent) : "\u2014"}</div></div>
@@ -3776,7 +4105,7 @@
           `}
           <div style="display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap;">
             <input type="text" id="overheadNameInput" autocapitalize="words" enterkeyhint="next" aria-label="Overhead name" placeholder="e.g. Rent" style="flex:1; min-width:140px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
-            <input type="number" id="overheadAmountInput" aria-label="Monthly amount" placeholder="Amount / mo" inputmode="decimal" step="0.01" min="0" style="width:120px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
+            <input type="number" id="overheadAmountInput" aria-label="Monthly amount" placeholder="Amount / mo" inputmode="decimal" step="0.01" min="0" max="${MAX_OVERHEAD}" style="width:120px; padding:var(--space-2); border:1px solid var(--divider); border-radius:var(--radius-sm);">
             <button class="btn btn-secondary btn-sm" id="addOverheadBtn">Add</button>
           </div>
         </div>
@@ -3785,30 +4114,35 @@
       ${breakEvenRevenue !== null && menu.dishCount > 0 ? `
         <div class="section">
           <div class="section-heading">What this means</div>
-          <p style="font-size:14px; color:var(--text-secondary);">At your menu's current profit margin, you need <strong class="num">${fmtCurrency(breakEvenRevenue)}</strong> in monthly revenue to cover overheads. You're currently generating <strong class="num">${fmtCurrency(menu.totalRevenue)}</strong>${menu.totalRevenue >= breakEvenRevenue ? ", which clears break-even." : ` \u2014 ${fmtCurrency(breakEvenRevenue - menu.totalRevenue)} short of break-even.`}</p>
+          <p style="font-size:14px; color:var(--text-secondary);">At your menu's current profit margin, you need <strong class="num">${fmtCurrency(breakEvenRevenue)}</strong> in monthly revenue to cover overheads, labour${menu.totalWasteCost > 0 ? " and this month's waste" : ""}. You're currently generating <strong class="num">${fmtCurrency(menu.totalRevenue)}</strong>${menu.totalRevenue >= breakEvenRevenue ? ", which clears break-even." : ` \u2014 ${fmtCurrency(breakEvenRevenue - menu.totalRevenue)} short of break-even.`}</p>
         </div>
       ` : ""}
     `;
+
+    if (menu.dishCount === 0) {
+      wireEmptyState(el);
+      return;
+    }
 
     el.querySelectorAll("[data-open-detail]").forEach(row =>
       row.addEventListener("click", () => openDetail(Number(row.dataset.openDetail)))
     );
     document.getElementById("labourCostInput").addEventListener("change", (e) => {
       const v = Number(e.target.value);
-      labourCost = (e.target.value !== "" && Number.isFinite(v) && v >= 0) ? v : null;
+      labourCost = (e.target.value !== "" && Number.isFinite(v) && v >= 0 && v <= MAX_LABOUR_COST) ? v : null;
       saveLabour();
       renderProfitControl(menu);
     });
     document.getElementById("labourHoursInput").addEventListener("change", (e) => {
       const v = Number(e.target.value);
-      labourHours = (e.target.value !== "" && Number.isFinite(v) && v >= 0) ? v : null;
+      labourHours = (e.target.value !== "" && Number.isFinite(v) && v >= 0 && v <= MAX_LABOUR_HOURS) ? v : null;
       saveLabour();
       renderProfitControl(menu);
     });
     el.querySelectorAll("[data-delete-overhead]").forEach(btn => {
       btn.addEventListener("click", () => {
         const item = overheads.find(o => o.id === Number(btn.dataset.deleteOverhead));
-        if (!item || !confirm(`Remove "${item.name}"?`)) return;
+        if (!item || !confirm(`Remove "${item.name}" from monthly overheads? This can't be undone.`)) return;
         overheads = overheads.filter(o => o.id !== Number(btn.dataset.deleteOverhead));
         saveOverheads();
         renderProfitControl(menu);
@@ -3822,7 +4156,7 @@
       const name = nameInput.value.trim();
       const amount = Number(amountInput.value);
       if (!name) { alert("Enter a name for this overhead."); return; }
-      if (!Number.isFinite(amount) || amount < 0) { alert("Enter a valid monthly amount."); return; }
+      if (!Number.isFinite(amount) || amount < 0 || amount > MAX_OVERHEAD) { alert(`Enter a valid monthly amount (${fmtCurrency(0)}–${fmtCurrency(MAX_OVERHEAD)}).`); return; }
       overheads.push({ id: nextOverheadId++, name, monthlyAmount: amount });
       saveOverheads();
       renderProfitControl(menu);
@@ -4121,7 +4455,13 @@
         const beUnits = breakEvenUnits(currentMonthlyProfit, newUnitMargin);
         const beText = v <= d.ingredientCost
           ? " \u00b7 at or below break-even price \u2014 every sale loses money"
-          : (beUnits !== null ? ` \u00b7 need ${Math.ceil(beUnits)}/mo to match today's profit` : "");
+          : (d.unitsSold === 0
+            ? " \u00b7 no monthly sales yet to compare against"
+            : (beUnits !== null
+              ? (currentMonthlyProfit <= 0
+                ? " \u00b7 already an improvement on today's loss"
+                : ` \u00b7 need ${Math.ceil(beUnits)}/mo to match today's profit`)
+              : ""));
         detailEl.textContent = `New margin ${fmtPercent(r.newGrossMarginPercent)} \u00b7 food cost ${fmtPercent(r.newFoodCostPercent)}${shift}${beText}`;
       }
       lastResults.price = { label: "Change price", value: v !== d.sellingPrice ? r.monthlyImprovement : 0 };
@@ -4142,7 +4482,13 @@
         const beUnits = breakEvenUnits(currentMonthlyProfit, newUnitMargin);
         const beText = v >= d.sellingPrice
           ? " \u00b7 at or above break-even cost \u2014 every sale loses money"
-          : (beUnits !== null ? ` \u00b7 need ${Math.ceil(beUnits)}/mo to match today's profit` : "");
+          : (d.unitsSold === 0
+            ? " \u00b7 no monthly sales yet to compare against"
+            : (beUnits !== null
+              ? (currentMonthlyProfit <= 0
+                ? " \u00b7 already an improvement on today's loss"
+                : ` \u00b7 need ${Math.ceil(beUnits)}/mo to match today's profit`)
+              : ""));
         detailEl.textContent = `New margin ${fmtPercent(r.newGrossMarginPercent)} \u00b7 food cost ${fmtPercent(r.newFoodCostPercent)}${shift}${beText}`;
       }
       lastResults.cost = { label: "Reduce ingredient cost", value: v !== d.ingredientCost ? r.monthlyImprovement : 0 };
@@ -4176,15 +4522,23 @@
     }
 
     function updateCombined() {
-      const pv = Number(priceInput.value);
-      const cv = Number(costInput.value);
-      const sv = Number(salesInput.value);
+      // Use the same parser as updatePrice/updateCost/updateSales. Plain Number("")
+      // returns 0, not NaN — so while a user has cleared a field mid-edit (about to
+      // type a new value), this would have silently fed a fabricated "0" test value
+      // into the combined scenario and comparison table, even though the individual
+      // lever card correctly showed "—" for the same empty input at the same moment.
+      const pv = parseScenarioInput(priceInput.value);
+      const cv = parseScenarioInput(costInput.value);
+      const sv = parseScenarioInput(salesInput.value);
       const tbody = document.getElementById("comparisonTableBody");
       const detailEl = document.getElementById("combinedTestDetail");
       const valid = Number.isFinite(pv) && pv >= 0 && pv <= MAX_PRICE
         && Number.isFinite(cv) && cv >= 0 && cv <= MAX_COST
         && Number.isFinite(sv) && sv >= 0 && sv <= MAX_UNITS;
-      if (!valid) { tbody.innerHTML = ""; detailEl.textContent = "—"; return; }
+      // Invalidate the stale result too — without this, clearing a field blanks the
+      // table but leaves updateRecommendation() citing figures from before the field
+      // was cleared, since it only checks `!lastCombined`.
+      if (!valid) { tbody.innerHTML = ""; detailEl.textContent = "—"; lastCombined = null; return; }
       const units = Math.floor(sv);
       const r = combinedScenario(d, pv, cv, units, menu);
       const currentCat = categorize(d, menu);
@@ -4194,13 +4548,23 @@
       const row = (label, current, proposed, changed) =>
         `<tr><td>${label}</td><td class="num-col">${current}</td><td class="num-col"${changed ? ' style="font-weight:700;"' : ""}>${proposed}</td></tr>`;
 
+      const priceChanged = pv !== d.sellingPrice;
+      const costChanged = cv !== d.ingredientCost;
+      const unitsChanged = units !== d.unitsSold;
+      // Margin/food cost are derived from price+cost only; profit is derived from
+      // all three. Bold them only when an input they actually depend on changed —
+      // a hardcoded true here previously bolded these every time, even with no
+      // test input touched.
+      const marginOrFoodCostChanged = priceChanged || costChanged;
+      const profitChanged = priceChanged || costChanged || unitsChanged;
+
       tbody.innerHTML = [
-        row("Price", fmtCurrency(d.sellingPrice), fmtCurrency(pv), pv !== d.sellingPrice),
-        row("Ingredient cost", fmtCurrency(d.ingredientCost), fmtCurrency(cv), cv !== d.ingredientCost),
-        row("Units sold / mo", d.unitsSold, units, units !== d.unitsSold),
-        row("Gross margin", fmtPercent(d.grossMarginPercent), fmtPercent(r.newGrossMarginPercent), true),
-        row("Food cost", fmtPercent(d.foodCostPercent), fmtPercent(r.newFoodCostPercent), true),
-        row("Monthly profit", fmtCurrency(currentMonthlyProfit), fmtCurrency(proposedMonthlyProfit), true),
+        row("Price", fmtCurrency(d.sellingPrice), fmtCurrency(pv), priceChanged),
+        row("Ingredient cost", fmtCurrency(d.ingredientCost), fmtCurrency(cv), costChanged),
+        row("Units sold / mo", d.unitsSold, units, unitsChanged),
+        row("Gross margin", fmtPercent(d.grossMarginPercent), fmtPercent(r.newGrossMarginPercent), marginOrFoodCostChanged),
+        row("Food cost", fmtPercent(d.foodCostPercent), fmtPercent(r.newFoodCostPercent), marginOrFoodCostChanged),
+        row("Monthly profit", fmtCurrency(currentMonthlyProfit), fmtCurrency(proposedMonthlyProfit), profitChanged),
         row("Status", `${currentCat.icon} ${currentCat.label}`, r.newCategory ? `${r.newCategory.icon} ${r.newCategory.label}` : "—", r.newCategory && r.newCategory.code !== currentCat.code)
       ].join("");
 
@@ -4261,19 +4625,30 @@
     return s;
   }
 
+  // OWASP CSV-injection mitigation: a text field that opens with =, +, - or @ (or a
+  // leading tab/CR) can be interpreted as a formula by Excel/Sheets when the file is
+  // opened. Only applied to genuinely free-text fields (dish name, the opportunity
+  // summary) — never to numeric-formatted cells, where a leading "-" is just a
+  // legitimate negative number, not a formula.
+  function sanitizeFormulaField(value) {
+    const s = String(value);
+    return /^[=+\-@\t\r]/.test(s) ? `'${s}` : s;
+  }
+
   function exportCsv() {
     if (dishes.length === 0) {
       alert("Add at least one confirmed dish before exporting a CSV.");
       return;
     }
     const menu = calcMenu(dishes);
-    const rows = [["Dish", "Selling Price", "Ingredient Cost", "Units Sold", "Gross Profit", "Gross Margin %", "Food Cost %", "Monthly Gross Profit", "Category"]];
+    const rows = [["Dish", "Selling Price", "Ingredient Cost", "Units Sold", "Gross Profit", "Gross Margin %", "Food Cost %", "Monthly Gross Profit", "Waste Units", "Waste Cost", "Category"]];
     menu.dishes.forEach(d => {
       const cat = categorize(d, menu);
       rows.push([
-        d.name, d.sellingPrice.toFixed(2), d.ingredientCost.toFixed(2), d.unitsSold,
-        d.grossProfit.toFixed(2), d.grossMarginPercent.toFixed(1), d.foodCostPercent.toFixed(1),
-        d.totalGrossProfit.toFixed(2), cat.label
+        sanitizeFormulaField(d.name), d.sellingPrice.toFixed(2), d.ingredientCost.toFixed(2), d.unitsSold,
+        d.grossProfit.toFixed(2), d.grossMarginPercent.toFixed(1),
+        Number.isFinite(d.foodCostPercent) ? d.foodCostPercent.toFixed(1) : "n/a",
+        d.totalGrossProfit.toFixed(2), d.wasteUnits, d.wasteCost.toFixed(2), cat.label
       ]);
     });
     const csv = rows.map(r => r.map(csvEscape).join(",")).join("\n");
@@ -4299,7 +4674,7 @@
       return;
     }
     const rows = [["Dish", "Status", "Why flagged", "Opportunity"]];
-    items.forEach(i => rows.push([i.dish.name, i.category.label, i.meta, i.value || ""]));
+    items.forEach(i => rows.push([sanitizeFormulaField(i.dish.name), i.category.label, i.meta, sanitizeFormulaField(i.value || "")]));
     const csv = rows.map(r => r.map(csvEscape).join(",")).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
@@ -4335,11 +4710,27 @@
     name: /^(dish|item|menu ?item|product|description)/i,
     sellingPrice: /(sell(ing)? ?price|menu ?price|retail ?price|^price$)/i,
     ingredientCost: /(ingredient ?cost|food ?cost(?! ?%)|cogs|^cost$)/i,
-    unitsSold: /(units? ?sold|qty ?sold|quantity ?sold|^(units|qty|quantity|sold|volume)$)/i
+    unitsSold: /(units? ?sold|qty ?sold|quantity ?sold|^(units|qty|quantity|sold|volume)$)/i,
+    // Optional — not required for a column map to be considered "found" (see detectColumnMap),
+    // so third-party CSVs without a waste column still import fine. Exists so that re-importing
+    // this app's own export (which does write Waste Units/Waste Cost) doesn't silently drop waste data.
+    wasteUnits: /(waste ?units?|units? ?wasted)/i
   };
 
   function cleanNumber(str) {
-    return Number(String(str).replace(/[£$€,]/g, "").trim());
+    const cleaned = String(str ?? "").replace(/[£$€,]/g, "").trim();
+    return cleaned === "" ? NaN : Number(cleaned);
+  }
+
+  // Currency values are always displayed rounded to 2dp (fmtCurrency), including in
+  // the import preview \u2014 but nothing previously rounded the *stored* number to
+  // match. A cell like "9.999" showed as "£10.00" in the preview yet committed as
+  // the raw 9.999, silently more precise than what was actually confirmed, and
+  // surfacing later un-rounded in the edit form. Round at parse time so the
+  // committed value is identical to the number the preview showed, not just
+  // visually equal after display-rounding.
+  function round2(v) {
+    return Number.isFinite(v) ? Math.round(v * 100) / 100 : v;
   }
 
   function detectColumnMap(headerCols) {
@@ -4355,11 +4746,43 @@
     return found ? map : null;
   }
 
+  // Splits the whole file into logical rows while respecting quote state, so a
+  // quoted field containing an embedded newline (RFC 4180-valid, and something
+  // this app's own csvEscape can produce for a dish name typed elsewhere) stays
+  // one row instead of being chopped in two and misaligning every row after it.
+  function splitCsvRows(text) {
+    const rows = [];
+    let cur = "", inQuotes = false, lineNum = 1, rowStartLine = 1;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (inQuotes) {
+        cur += ch;
+        if (ch === '"') {
+          if (text[i + 1] === '"') { cur += text[++i]; }
+          else inQuotes = false;
+        } else if (ch === "\n") lineNum++;
+        continue;
+      }
+      if (ch === '"') { inQuotes = true; cur += ch; continue; }
+      if (ch === "\r") {
+        if (text[i + 1] === "\n") i++;
+        rows.push({ text: cur, num: rowStartLine });
+        cur = ""; lineNum++; rowStartLine = lineNum;
+        continue;
+      }
+      if (ch === "\n") {
+        rows.push({ text: cur, num: rowStartLine });
+        cur = ""; lineNum++; rowStartLine = lineNum;
+        continue;
+      }
+      cur += ch;
+    }
+    rows.push({ text: cur, num: rowStartLine });
+    return rows;
+  }
+
   function parseCsv(text) {
-    const rawLines = text.split(/\r\n|\n|\r/);
-    const lines = rawLines
-      .map((l, idx) => ({ text: l, num: idx + 1 }))
-      .filter(l => l.text.trim() !== "");
+    const lines = splitCsvRows(text).filter(l => l.text.trim() !== "");
     if (lines.length === 0) return { dishes: [], rejected: [] };
     const firstCols = splitCsvLine(lines[0].text);
     const looksLikeHeader = firstCols.length >= 4 &&
@@ -4369,6 +4792,15 @@
     // Prefer matching columns by header wording (any order); fall back to the fixed
     // Dish/Price/Cost/Units positions when headers aren't recognised.
     const columnMap = looksLikeHeader ? detectColumnMap(firstCols) : null;
+    // If the first row looks like a header but we can't identify all four required
+    // columns by name, don't fall back to guessing positions 0-3 \u2014 an unrecognised
+    // header gives no evidence the data is even in that order. Proven failure case:
+    // a header missing a "Dish" column entirely silently shifted every value one
+    // column, importing a dish named "15.00" with its price/cost/units all one field
+    // out \u2014 no rejection, no warning. Bail out with a clear message instead.
+    if (looksLikeHeader && !columnMap) {
+      return { dishes: [], rejected: [{ row: 1, reason: "couldn't recognise the column headers \u2014 expected columns for Dish, Selling Price, Ingredient Cost and Units Sold" }], headerRow: lines[0].text };
+    }
     const colFor = columnMap || { name: 0, sellingPrice: 1, ingredientCost: 2, unitsSold: 3 };
     const minCols = Math.max(colFor.name, colFor.sellingPrice, colFor.ingredientCost, colFor.unitsSold) + 1;
     const rows = looksLikeHeader ? lines.slice(1) : lines;
@@ -4377,7 +4809,7 @@
     const seenNames = new Set(dishes.map(x => x.name.trim().toLowerCase()));
     rows.forEach(({ text: line, num: rowNum }) => {
       const cols = splitCsvLine(line);
-      if (cols.length < minCols) { rejected.push({ row: rowNum, reason: "wrong number of columns" }); return; }
+      if (cols.length < minCols) { rejected.push({ row: rowNum, reason: `only ${cols.length} column(s) found, expected at least ${minCols}` }); return; }
       // An unquoted thousands separator (e.g. 1,200) splits into extra numeric-only
       // trailing columns instead of one field — silently keeping only the first part
       // would import a wrong (truncated) value with no warning, so reject it instead.
@@ -4391,21 +4823,28 @@
         return;
       }
       const name = (cols[colFor.name] || "").trim();
-      const sellingPrice = cleanNumber(cols[colFor.sellingPrice]);
-      const ingredientCost = cleanNumber(cols[colFor.ingredientCost]);
+      const sellingPrice = round2(cleanNumber(cols[colFor.sellingPrice]));
+      const ingredientCost = round2(cleanNumber(cols[colFor.ingredientCost]));
       const unitsSold = cleanNumber(cols[colFor.unitsSold]);
+      // Waste column is optional — only present when re-importing this app's own export
+      // (or a file that happens to include one). Blank/absent stays 0, same as manual entry.
+      const wasteUnitsRaw = colFor.wasteUnits !== undefined ? (cols[colFor.wasteUnits] || "").trim() : "";
+      const wasteUnits = wasteUnitsRaw !== "" ? Math.floor(cleanNumber(wasteUnitsRaw)) : 0;
       if (!name) { rejected.push({ row: rowNum, reason: "missing dish name" }); return; }
       const nameKey = name.toLowerCase();
-      if (seenNames.has(nameKey)) { rejected.push({ row: rowNum, reason: "duplicate dish name" }); return; }
-      if (!Number.isFinite(sellingPrice) || sellingPrice < 0) { rejected.push({ row: rowNum, reason: "invalid selling price" }); return; }
-      if (sellingPrice > MAX_PRICE) { rejected.push({ row: rowNum, reason: "selling price too large" }); return; }
-      if (!Number.isFinite(ingredientCost) || ingredientCost < 0) { rejected.push({ row: rowNum, reason: "invalid ingredient cost" }); return; }
-      if (ingredientCost > MAX_COST) { rejected.push({ row: rowNum, reason: "ingredient cost too large" }); return; }
-      if (!Number.isFinite(unitsSold) || unitsSold < 0) { rejected.push({ row: rowNum, reason: "invalid units sold" }); return; }
-      if (!Number.isInteger(unitsSold)) { rejected.push({ row: rowNum, reason: "units sold must be a whole number" }); return; }
-      if (unitsSold > MAX_UNITS) { rejected.push({ row: rowNum, reason: "units sold too large" }); return; }
+      if (seenNames.has(nameKey)) { rejected.push({ row: rowNum, reason: `duplicate dish name "${name}"` }); return; }
+      const sellingPriceError = dishFieldError("sellingPrice", sellingPrice);
+      if (sellingPriceError) { rejected.push({ row: rowNum, reason: sellingPriceError }); return; }
+      const ingredientCostError = dishFieldError("ingredientCost", ingredientCost);
+      if (ingredientCostError) { rejected.push({ row: rowNum, reason: ingredientCostError }); return; }
+      const unitsSoldError = dishFieldError("unitsSold", unitsSold);
+      if (unitsSoldError) { rejected.push({ row: rowNum, reason: unitsSoldError }); return; }
+      if (wasteUnitsRaw !== "") {
+        const wasteUnitsError = dishFieldError("wasteUnits", wasteUnits);
+        if (wasteUnitsError) { rejected.push({ row: rowNum, reason: wasteUnitsError }); return; }
+      }
       seenNames.add(nameKey);
-      parsedDishes.push({ name, sellingPrice, ingredientCost, unitsSold, wasteUnits: 0 });
+      parsedDishes.push({ name, sellingPrice, ingredientCost, unitsSold, wasteUnits });
     });
     return { dishes: parsedDishes, rejected, headerRow: looksLikeHeader ? lines[0].text : null };
   }
@@ -4426,7 +4865,6 @@
         alert(`\u274c Import failed \u2014 no valid dish rows were found.${reasonNote} Expected columns: Dish, Selling Price, Ingredient Cost, Units Sold.`);
         return;
       }
-      const CSV_IMPORT_MAX_ROWS = 500;
       const truncated = parsed.length > CSV_IMPORT_MAX_ROWS;
       const toImport = truncated ? parsed.slice(0, CSV_IMPORT_MAX_ROWS) : parsed;
       pendingImport = { toImport, truncated, parsedCount: parsed.length, rejected, headerRow };
@@ -4441,7 +4879,7 @@
 
     const summaryParts = [`${toImport.length} dish${toImport.length === 1 ? "" : "es"} will be imported.`];
     if (headerRow) summaryParts.push(`Row 1 was treated as a header and skipped: "${headerRow}" \u2014 if that's actually a dish, add a real header row or reorder your data.`);
-    if (truncated) summaryParts.push(`${parsedCount - toImport.length} additional row(s) will be skipped past the 500-row-per-file limit.`);
+    if (truncated) summaryParts.push(`${parsedCount - toImport.length} additional row(s) will be skipped past the ${CSV_IMPORT_MAX_ROWS}-row-per-file limit.`);
     if (rejected.length) {
       const reasonRows = {};
       rejected.forEach(r => { (reasonRows[r.reason] = reasonRows[r.reason] || []).push(r.row); });
@@ -4482,7 +4920,7 @@
     closeImportPreview();
     renderAll();
     const parts = [`Imported ${toImport.length} dish${toImport.length === 1 ? "" : "es"}.`];
-    if (truncated) parts.push(`${parsedCount - toImport.length} additional row(s) were skipped past the 500-row-per-file limit.`);
+    if (truncated) parts.push(`${parsedCount - toImport.length} additional row(s) were skipped past the ${CSV_IMPORT_MAX_ROWS}-row-per-file limit.`);
     if (rejected.length) parts.push(`${rejected.length} row(s) were skipped.`);
     const hasIssues = truncated || rejected.length > 0;
     const prefix = hasIssues ? "\u26a0\ufe0f Import completed with issues. " : "\u2705 ";
@@ -4498,6 +4936,7 @@
 
   function loadSampleMenu() {
     if (dishes.length > 0 && !confirm(`Replace your current menu (${dishes.length} dish${dishes.length === 1 ? "" : "es"}) with the sample menu? This can't be undone.`)) return;
+    dismissUndoToast(); // a pending delete-undo would splice into this new array at stale indices
     dishes = SAMPLE_MENU.map(d => ({ id: nextId++, ...d }));
     saveDishes();
     renderAll();
@@ -4538,11 +4977,20 @@
     const el = document.getElementById("printReport");
     if (menu.dishCount === 0) { el.innerHTML = `<div class="empty-state"><h2>No dishes to report on</h2><p>Add and confirm at least one dish before generating a report.</p></div>`; return; }
 
-    let biggest = null;
+    let worstLoss = null;
     menu.dishes.forEach(d => {
-      const opp = bestOpportunity(d, menu);
-      if (opp && (!biggest || opp.monthlyImprovement > biggest.opp.monthlyImprovement)) biggest = { dish: d, opp };
+      if (categorize(d, menu).code !== "loss") return;
+      const lossPerMonth = (d.ingredientCost - d.sellingPrice) * d.unitsSold;
+      if (!worstLoss || lossPerMonth > worstLoss.lossPerMonth) worstLoss = { dish: d, lossPerMonth };
     });
+
+    let biggest = null;
+    if (!worstLoss) {
+      menu.dishes.forEach(d => {
+        const opp = bestOpportunity(d, menu);
+        if (opp && (!biggest || opp.monthlyImprovement > biggest.opp.monthlyImprovement)) biggest = { dish: d, opp };
+      });
+    }
 
     const counts = { strong: 0, grow: 0, optimise: 0, review: 0, loss: 0 };
     menu.dishes.forEach(d => { const c = categorize(d, menu); if (counts[c.code] !== undefined) counts[c.code]++; });
@@ -4552,8 +5000,10 @@
     const mix = salesMixAnalysis(menu);
     const planItems = buildActionPlan(menu).slice(0, 5);
     const pc = calcProfitControl(menu);
-    const historyPeriods = snapshots.slice().reverse().map(s => ({ label: s.label, savedAt: s.savedAt, dishes: s.dishes }));
+    // Sorted explicitly by savedAt — see the matching comment in renderHistoricalProfitability.
+    const historyPeriods = snapshots.map(s => ({ label: s.label, savedAt: s.savedAt, dishes: s.dishes }));
     historyPeriods.push({ label: "Current menu", savedAt: new Date().toISOString(), dishes });
+    historyPeriods.sort((a, b) => new Date(a.savedAt).getTime() - new Date(b.savedAt).getTime());
     const historyRows = historyPeriods.length > 1 ? historyPeriods.map(p => ({ label: p.label, savedAt: p.savedAt, menu: calcMenu(p.dishes) })) : [];
 
     const kpiCard = (label, value) => `
@@ -4564,7 +5014,7 @@
     `;
 
     el.innerHTML = `
-      <div style="font-family: Inter, sans-serif; color:#20211F; padding: 24px;">
+      <div style="font-family: Inter, sans-serif; color:var(--text); padding: 24px;">
         <div style="border-bottom:2px solid var(--text); padding-bottom:12px; margin-bottom:20px;">
           <div style="display:flex; align-items:baseline; justify-content:space-between;">
             <h1 style="font-size:22px; letter-spacing:-0.01em;">${restaurantProfile.name ? esc(restaurantProfile.name) : "Menu Margin Analyzer"}</h1>
@@ -4587,7 +5037,11 @@
         </div>
         <p style="font-size:12px; color:var(--text-secondary); margin-bottom:20px;">${counts.strong} Strong \u00b7 ${counts.grow} Grow \u00b7 ${counts.optimise} Optimise \u00b7 ${counts.review} Review${counts.loss ? ` \u00b7 ${counts.loss} Loss` : ""}</p>
 
-        ${biggest ? `
+        ${worstLoss ? `
+          <h2 style="font-size:14px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px;">Losing money</h2>
+          <p style="font-size:13px; margin-bottom:4px;">${esc(worstLoss.dish.name)} — ingredient cost ${fmtCurrency(worstLoss.dish.ingredientCost)} exceeds selling price ${fmtCurrency(worstLoss.dish.sellingPrice)}. Monthly loss: ${fmtCurrency(worstLoss.lossPerMonth)}.</p>
+          <p style="font-size:11px; color:var(--text-muted); margin-bottom:20px;">Fix the price or cost, or remove the dish.</p>
+        ` : biggest ? `
           <h2 style="font-size:14px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px;">Biggest opportunity</h2>
           <p style="font-size:13px; margin-bottom:4px;">${esc(biggest.dish.name)} — food cost ${fmtPercent(biggest.dish.foodCostPercent)} vs ${menu.benchmarkLabel} ${fmtPercent(menu.benchmarkFoodCost)}. Potential improvement: ${fmtSigned(biggest.opp.monthlyImprovement)}/month (${fmtSigned(biggest.opp.annualImprovement)}/year).</p>
           <p style="font-size:11px; color:var(--text-muted); margin-bottom:20px;">Modelled estimate, not a guaranteed result.</p>
@@ -4707,7 +5161,8 @@
     const unit = unitInput.value.trim();
     const cost = Number(costInput.value);
     if (!name) { alert("Enter an ingredient name."); return; }
-    if (!Number.isFinite(cost) || cost < 0) { alert("Enter a valid cost per unit."); return; }
+    const libAddCostError = dishFieldError("ingredientCost", cost);
+    if (libAddCostError) { alert(`Cost per unit: ${libAddCostError}`); return; }
     const existingIdx = ingredientLibrary.findIndex(i => i.name.trim().toLowerCase() === name.toLowerCase());
     if (existingIdx !== -1) ingredientLibrary[existingIdx] = { ...ingredientLibrary[existingIdx], unit, costPerUnit: cost };
     else ingredientLibrary.push({ id: nextIngredientId++, name, unit, costPerUnit: cost });
@@ -4756,7 +5211,7 @@
   });
   targetFoodCostInput.addEventListener("change", (e) => {
     const v = Number(e.target.value);
-    targetFoodCostPercent = (e.target.value !== "" && Number.isFinite(v) && v > 0 && v <= 100) ? v : null;
+    targetFoodCostPercent = (e.target.value !== "" && Number.isFinite(v) && v >= 0.5 && v <= 100) ? v : null;
     saveTargetFoodCost();
     syncTargetFoodCostUI();
     renderAll();
@@ -4780,11 +5235,16 @@
   function renderAll() {
     // Compute the shared menu once per render pass instead of once per screen —
     // calcMenu() walks every dish, so this avoids redundant O(n) work as menus grow.
+    // Only the currently active screen is rendered eagerly here (Overview, Menu's
+    // table+cards, and Insights each do a full pass over every dish) — the others
+    // render lazily on navigation below, same as scenarios/plan/profit already did.
+    // At large dish counts this stopped every single edit from tripling DOM work
+    // behind screens that weren't even visible.
     const menu = calcMenu(dishes);
     renderDishForm();
-    renderOverview(menu);
-    renderMenu(menu);
-    renderInsights(menu);
+    if (currentScreen === "overview") renderOverview(menu);
+    if (currentScreen === "menu") renderMenu(menu);
+    if (currentScreen === "insights") renderInsights(menu);
     if (currentScreen === "scenarios") renderScenarios(menu);
   }
 
@@ -4806,7 +5266,6 @@
     snapshots = loadSnapshots();
     renderSnapshotList();
     populateCompareSelects();
-    renderHistoricalProfitability();
     const loaded = loadDishes();
     if (loaded && loaded.length > 0) {
       dishes = loaded;
@@ -4815,6 +5274,10 @@
       dishes = [];
     }
     renderAll();
+    // The current menu is loaded above; render historical profitability only now so
+    // the final "Current menu" period contains the persisted dishes rather than the
+    // empty pre-load array used during bootstrap.
+    renderHistoricalProfitability();
     setScreen("overview");
 
     if (!hasSeenOnboarding() && dishes.length === 0) {

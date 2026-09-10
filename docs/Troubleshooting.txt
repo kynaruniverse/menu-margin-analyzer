@@ -1,0 +1,51 @@
+MENU MARGIN ANALYZER — TROUBLESHOOTING
+=======================================
+Version 2.0
+
+STARTING THE APP
+----------------
+Extract the complete download to a normal folder before opening index.html. Do not run the file from inside a zip preview or temporary archive location. If the app opens with no dishes, choose Try sample menu or use + Add dish to create the first confirmed dish.
+
+NO NUMBERS OR AN EMPTY SCREEN
+-----------------------------
+Only confirmed dishes appear in calculations. A draft dish does not affect Overview, Insights, Action plan, Scenarios or Profit control until Confirm dish or Save changes is completed. If a screen is empty, use its Add action or return to Menu and confirm at least one dish.
+
+SCENARIOS, EXPORT ACTION LIST OR PRINT REPORT ARE NOT VISIBLE
+--------------------------------------------------------------
+On desktop, these actions are available from the sidebar. On a phone or narrow window, Scenarios is reached through a dish's Test a change action; Import and Export move to the top bar, while Export action list and Print report remain desktop-sidebar actions.
+
+CSV IMPORT FAILS
+----------------
+Use a CSV with a recognisable header row containing Dish, Selling Price, Ingredient Cost and Units Sold. Names and fields containing commas must be quoted. Review the preview before confirming. Invalid rows are reported with row numbers and are not imported. A file is capped at 500 valid rows; additional rows are explicitly reported as skipped.
+
+CSV EXPORT OR REPORT DOWNLOAD DOES NOT APPEAR
+---------------------------------------------
+Check that at least one confirmed dish exists. Allow browser downloads for the page and check the browser's downloads list. Exported CSV data is generated locally in the browser.
+
+A SAVED VERSION OR INGREDIENT LIBRARY APPEARS MISSING
+-----------------------------------------------------
+Saved versions and the ingredient library are stored in the current browser's local storage. Return to the same browser profile and the same extracted application location. Clearing site data, private browsing, browser storage limits or a different browser profile can make local data unavailable. Export a CSV backup before clearing browser data.
+
+STORAGE WARNING
+---------------
+If the browser reports that storage is full or unavailable, the application keeps the current session running where possible and shows a save warning. Export the menu CSV, close unused tabs, remove unnecessary site data, and retry in a normal browser window with storage enabled.
+
+A DISH WILL NOT SAVE
+--------------------
+Check the inline validation message. Required name and numeric fields must be valid; units sold and units wasted must be whole numbers; values must be within the displayed limits; waste cannot exceed units sold; recipe lines require a name, positive quantity and valid cost per unit. Correct the highlighted values and confirm again.
+
+A DISH WAS REMOVED BY MISTAKE
+-----------------------------
+Use the Undo button in the removal toast immediately after deletion. The toast expires after a short period; after it expires, restore a saved Menu version if one contains the dish or re-import it from a CSV backup.
+
+PRINTING LOOKS BLANK
+--------------------
+Use Print report after at least one confirmed dish exists. The app builds the printable report immediately before opening the browser print dialog. If a preview is blank, cancel and retry from the desktop sidebar, ensure the browser is not blocking the print dialog, and check that print backgrounds/styles are enabled if visual colours matter.
+
+NUMBERS LOOK DIFFERENT FROM AN ACCOUNTING SYSTEM
+------------------------------------------------
+This is a modelling tool, not an accounting system. Figures use the entered menu, sales, ingredient cost, waste, overhead and labour assumptions. Potential improvements and net-profit figures are estimates, not guarantees; verify outputs before making business decisions.
+
+PRIVACY AND BACKUP
+------------------
+The application stores data locally in the browser and does not transmit it to the author or a third party. Users are responsible for backups. Use CSV export regularly and keep exported files in a secure location.
