@@ -3,6 +3,9 @@ MENU MARGIN ANALYZER — CHANGELOG
 Current version: 2.0
 
 v2.0
+- Release-readiness finalisation: hardened persisted-data recovery, numeric bounds, CSV validation and formula-injection protection; verified calculation edge cases, historical versions, Profit Control, responsive layouts, print output, exports and large-data resilience.
+- Accessibility and customer-experience polish: explicit names for dynamic controls, modal Escape handling, focus restoration, actionable empty states, draft-versus-confirmed dish guidance, destructive-action confirmation and Undo recovery.
+- Documentation synchronisation: User Guide, Quick Start Guide and Start Here workflows reviewed against the six current screens, first-use onboarding, mobile navigation, CSV workflows, menu versions, Profit Control and troubleshooting guidance.
 - Full visual and structural redesign to the new Visual Design System (warm/editorial "Profit Desk" concept).
 - New navigation: Overview, Menu, Insights, Scenarios, Action plan, Profit control.
 - New Overview screen: biggest single opportunity, KPI strip (revenue, gross profit, food cost, dishes analysed), Strong / Grow / Optimise / Review / Loss menu health bar, and a ranked "what deserves attention" priority list.
