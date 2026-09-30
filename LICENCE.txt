@@ -1,0 +1,13 @@
+MenuIQ Starter Licence
+
+This file is a placeholder licence for the current private beta packaging.
+
+The buyer may use the MenuIQ Starter application for their own business operations.
+A consultant or agency licence should be purchased if the application is used to
+prepare work for multiple client businesses.
+
+The application is provided as a decision-support tool. It uses user-entered data
+and does not guarantee financial results. The buyer is responsible for keeping
+backup copies of their data and for checking calculations before acting on them.
+
+Replace this file with final legal terms before public sale.
